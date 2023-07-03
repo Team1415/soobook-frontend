@@ -1,7 +1,5 @@
-export const SamplePage = () => {
-  return (
-    <>
-      <h1>Sample Page</h1>
-    </>
-  );
+const SamplePage = () => {
+  return <>SamplePage</>;
 };
+
+export default SamplePage;
