@@ -9,10 +9,10 @@ const HomePage = () => {
   const { t } = useTranslation();
 
   if (isLoading) {
-    return <>is loading</>;
+    return <>{t('common.message.is-loading')}</>;
   } else {
     console.log('data', data);
-  return <>{t('home-page.title.page-name')}</>;
+    return <>{t('home-page.title.page-name')}</>;
   }
 };
 
