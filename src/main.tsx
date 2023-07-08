@@ -5,6 +5,7 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 import '@/main.css';
+import '@locales/i18n';
 
 import { SoobookRouter } from '@router/SoobookRouter';
 import { initMock } from '@mocks/initMock';
