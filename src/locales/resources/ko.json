@@ -2,7 +2,9 @@
   "common": {
     "title": {},
     "label": {},
-    "message": {}
+    "message": {
+      "is-loading": "로딩 중입니다"
+    }
   },
   "home-page": {
     "title": {
