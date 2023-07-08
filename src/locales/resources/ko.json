@@ -1,0 +1,35 @@
+{
+  "common": {
+    "title": {},
+    "label": {},
+    "message": {}
+  },
+  "home-page": {
+    "title": {
+      "page-name": "홈 페이지"
+    },
+    "label": {},
+    "message": {}
+  },
+  "search-page": {
+    "title": {
+      "page-name": "검색 페이지"
+    },
+    "label": {},
+    "message": {}
+  },
+  "detail-page": {
+    "title": {
+      "page-name": "상세 페이지"
+    },
+    "label": {},
+    "message": {}
+  },
+  "not-found-page": {
+    "title": {
+      "page-name": "404 페이지"
+    },
+    "label": {},
+    "message": {}
+  }
+}
