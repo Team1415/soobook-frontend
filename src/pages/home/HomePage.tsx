@@ -1,5 +1,5 @@
-import { useTranslation } from 'react-i18next';
 import { useQuery } from '@tanstack/react-query';
+import { useTranslation } from 'react-i18next';
 
 const HomePage = () => {
   const { data, isLoading } = useQuery({

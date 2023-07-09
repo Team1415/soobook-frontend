@@ -1,11 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
 
 import FullPageLayout from '@components/layout/FullPageLayout';
-import SamplePage from '@pages/sample/SamplePage';
-import HomePage from '@pages/home/HomePage';
 import DetailPage from '@pages/detail/DetailPage';
-import SearchPage from '@pages/search/SearchPage';
 import NotFoundPage from '@pages/error/NotFoundPage';
+import HomePage from '@pages/home/HomePage';
+import SamplePage from '@pages/sample/SamplePage';
+import SearchPage from '@pages/search/SearchPage';
 
 export const SoobookRouter = () => {
   return (

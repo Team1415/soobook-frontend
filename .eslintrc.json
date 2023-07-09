@@ -26,7 +26,7 @@
     "project": ["./tsconfig.json"]
   },
   // Configuring third-party plugins
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "@typescript-eslint", "import"],
   // Resolve imports
   "settings": {
     "import/resolver": {
@@ -39,6 +39,33 @@
     }
   },
   "rules": {
+    "sort-imports": [
+      "warn",
+      {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "allowSeparatedGroups": true
+      }
+    ],
+    "import/order": [
+      "warn",
+      {
+        "newlines-between": "always",
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "builtin"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["src/**"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
     "linebreak-style": "off",
     // Configure prettier
     "prettier/prettier": [
