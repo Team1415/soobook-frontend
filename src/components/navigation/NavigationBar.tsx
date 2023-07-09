@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import { Box } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 import { NavigationBarContainer } from '@components/navigation/NavigationBar.style';
 import { Menu } from '@models/menu';
