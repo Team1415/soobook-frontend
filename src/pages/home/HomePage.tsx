@@ -5,10 +5,7 @@ import { Book } from '@models/book';
 import { BookService } from '@services/BookService';
 
 const HomePage = () => {
-  const { data, isLoading } = useQuery<Book[]>({
-    queryKey: ['books', 'new'],
-    queryFn: BookService.getNewestBooks,
-  });
+  const { data, isLoading } = useQuery<Book[]>(['books', 'new'], BookService.getNewestBooks);
   const { t } = useTranslation();
 
   if (isLoading) {
