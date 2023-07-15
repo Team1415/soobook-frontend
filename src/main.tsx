@@ -5,8 +5,8 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
+import { queryClient } from '@config/QueryClient';
 import { initMock } from '@mocks/initMock';
-import { queryClient } from '@queries/QueryClient';
 import { SoobookRouter } from '@router/SoobookRouter';
 
 import '@/main.css';

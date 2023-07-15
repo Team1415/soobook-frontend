@@ -1,10 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 
+import { Book } from '@models/book';
+import { BookService } from '@services/BookService';
+
 const HomePage = () => {
-  const { data, isLoading } = useQuery({
+  const { data, isLoading } = useQuery<Book[]>({
     queryKey: ['books', 'new'],
-    // queryFn: () => axios.get('http://localhost:8080/api/books/new').then((res) => res.data),
+    queryFn: BookService.getNewestBooks,
   });
   const { t } = useTranslation();
 
