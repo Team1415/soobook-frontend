@@ -19,7 +19,7 @@ axiosInstance.interceptors.request.use(
 
 axiosInstance.interceptors.response.use(
   (response: AxiosResponse) => {
-    return response.data;
+    return response;
   },
   (error: AxiosError) => {
     const { code, response, message, config } = error;

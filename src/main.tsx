@@ -13,7 +13,7 @@ import theme from '@styles/theme';
 
 import '@locales/i18n';
 
-if (import.meta.env.VITE_APP_MOCK) {
+if (import.meta.env.VITE_APP_MOCK as boolean) {
   await initMock();
 }
 
