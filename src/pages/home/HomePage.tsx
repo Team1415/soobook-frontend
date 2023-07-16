@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 
+import SampleBookCard from '@components/card/SampleBookCard';
 import UserHeader from '@components/header/UserHeader';
 import { Book } from '@models/book';
 import { BookService } from '@services/BookService';
@@ -16,6 +17,7 @@ const HomePage = () => {
     return (
       <>
         <UserHeader />
+        <SampleBookCard />
         {t('home-page.title.page-name')}
       </>
     );
