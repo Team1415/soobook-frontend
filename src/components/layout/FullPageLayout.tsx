@@ -3,9 +3,8 @@ import { FC, PropsWithChildren } from 'react';
 import { Box, useMediaQuery, useTheme } from '@mui/material';
 
 import SoobookIntroduction from '@components/layout/SoobookIntroduction';
+import Space from '@components/layout/Space';
 import NavigationBar from '@components/navigation/NavigationBar';
-
-import Space from './Space';
 
 const FullPageLayout: FC<PropsWithChildren> = ({ children }) => {
   const theme = useTheme();
