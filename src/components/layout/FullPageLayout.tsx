@@ -19,8 +19,7 @@ const FullPageLayout: FC<PropsWithChildren> = ({ children }) => {
         </>
       )}
       <Box width={theme.breakpoints.values.sm} boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px">
-        <NavigationBar />
-        <>{children}</>
+        {children}
       </Box>
     </Box>
   );
