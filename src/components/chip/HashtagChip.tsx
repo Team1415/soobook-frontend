@@ -1,9 +1,15 @@
 import { Chip } from '@mui/material';
 
-const SampleHashtagChip = () => {
+interface HashtagChipProps {
+  name: string;
+}
+
+const HashtagChip = (props: HashtagChipProps) => {
+  const { name } = props;
+
   return (
     <Chip
-      label="러스트"
+      label={name}
       style={{
         backgroundColor: '#F2F2F2',
         fontSize: '10px',
@@ -28,4 +34,4 @@ const SampleHashtagChip = () => {
   );
 };
 
-export default SampleHashtagChip;
+export default HashtagChip;
