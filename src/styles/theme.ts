@@ -34,6 +34,10 @@ const theme = createTheme({
       fontSize: '15px',
       fontWeight: 400,
     },
+    h6: {
+      fontSize: '12px',
+      fontWeight: 700,
+    },
   },
   spacing: 1,
 });

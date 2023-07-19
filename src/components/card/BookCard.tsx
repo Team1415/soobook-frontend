@@ -1,6 +1,13 @@
-import { Stack, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import { get } from 'lodash-es';
 
+import {
+  BookCardStack,
+  HashtagStack,
+  ImageStack,
+  StyledImage,
+  TitleStack,
+} from '@components/card/BookCard.style';
 import HashtagChip from '@components/chip/HashtagChip';
 import Space from '@components/layout/Space';
 import { BookCardModel } from '@models/book';
@@ -11,30 +18,22 @@ const BookCard = (props: BookCardProps) => {
   const { imageUrl, title, hashtags } = props;
 
   return (
-    <Stack
-      style={{
-        backgroundColor: '#FFFFFF',
-        height: '202px',
-        width: '120px',
-        alignItems: 'center',
-        borderRadius: '8px',
-      }}
-    >
+    <BookCardStack>
       <Space y={12} />
-      <Stack width="calc(120px - 32px)">
-        <img style={{ width: '88px', height: '128px', objectFit: 'cover' }} src={imageUrl} alt={title} />
-      </Stack>
+      <ImageStack>
+        <StyledImage src={imageUrl} alt={title} />
+      </ImageStack>
       <Space y={12} />
-      <Stack display="block" width="calc(120px - 24px)">
-        <Typography fontSize="12px" fontWeight="700" noWrap={true}>
+      <TitleStack>
+        <Typography variant="h6" noWrap={true}>
           {title}
         </Typography>
-      </Stack>
-      <Stack display="block" width="calc(120px - 24px)" direction="row" spacing={4}>
+      </TitleStack>
+      <HashtagStack direction="row" spacing={4}>
         {get(hashtags, '0') && <HashtagChip name={hashtags[0]} />}
         {get(hashtags, '1') && <HashtagChip name={hashtags[1]} />}
-      </Stack>
-    </Stack>
+      </HashtagStack>
+    </BookCardStack>
   );
 };
 
