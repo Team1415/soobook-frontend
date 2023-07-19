@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-import { NavigationBarContainer } from '@components/navigation/NavigationBar.style';
+import { NavigationBarBox } from '@components/navigation/NavigationBar.style';
 import { Menu } from '@models/menu';
 
 const menus: Menu[] = [
@@ -29,13 +29,13 @@ const menus: Menu[] = [
 
 const NavigationBar = () => {
   return (
-    <NavigationBarContainer>
+    <NavigationBarBox>
       {menus.map((menu, index) => (
         <Box key={`${index}_${menu.url}`}>
           <Link to={menu.url}>{menu.label}</Link>
         </Box>
       ))}
-    </NavigationBarContainer>
+    </NavigationBarBox>
   );
 };
 

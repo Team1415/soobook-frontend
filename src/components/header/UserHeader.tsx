@@ -1,45 +1,32 @@
-import { Avatar, Box, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
+
+import SoobookAvartar from '@components/avartar/SoobookAvartar';
+import { TypoBox, UserHeaderBox } from '@components/header/UserHeader.style';
 
 const UserHeader = () => {
   // TODO : login 여부에 따라 비회원 / 회원 보여주는 게 달라지도록 변경
-  const userName = sessionStorage.getItem('user-name');
+  const userName = sessionStorage.getItem('user-name') || undefined;
 
   return (
-    <Box
-      width="100%"
-      height="60px"
-      display="flex"
-      justifyContent="space-between"
-      alignItems="center"
-      sx={{ background: '#FFFFFF' }}
-    >
-      <Box marginLeft="20px" display="flex">
+    <UserHeaderBox>
+      <TypoBox>
         {userName ? (
           <>
-            <Typography fontSize="15px" fontWeight="400" whiteSpace="pre">
+            <Typography variant="h5" whiteSpace="pre">
               {'안녕하세요 '}
             </Typography>
-            <Typography fontSize="15px" fontWeight="700">
+            <Typography variant="h5" fontWeight="700">
               {userName}
             </Typography>
-            <Typography fontSize="15px" fontWeight="400">
-              님
-            </Typography>
+            <Typography variant="h5">님</Typography>
           </>
         ) : (
-          <Typography fontSize="15px" fontWeight="400">
-            수북의 서비스를 둘러보세요
-          </Typography>
+          <Typography variant="h5">수북의 서비스를 둘러보세요</Typography>
         )}
-      </Box>
-      <Avatar
-        src="/src/assets/fallback-user-icon.svg"
-        sx={{ width: '16px', height: '16px', marginRight: '20px' }}
-        variant={userName ? 'rounded' : 'square'}
-      >
-        {userName}
-      </Avatar>
-    </Box>
+      </TypoBox>
+
+      <SoobookAvartar name={userName} />
+    </UserHeaderBox>
   );
 };
 

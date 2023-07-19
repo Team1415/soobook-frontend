@@ -22,7 +22,7 @@ const BookCard = (props: BookCardProps) => {
     >
       <Space y={12} />
       <Stack width="calc(120px - 32px)">
-        <img style={{ width: '88px', height: '128px', objectFit: 'cover' }} src={imageUrl} />
+        <img style={{ width: '88px', height: '128px', objectFit: 'cover' }} src={imageUrl} alt={title} />
       </Stack>
       <Space y={12} />
       <Stack display="block" width="calc(120px - 24px)">

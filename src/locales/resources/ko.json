@@ -3,7 +3,8 @@
     "title": {},
     "label": {},
     "message": {
-      "is-loading": "로딩 중입니다"
+      "is-loading": "로딩 중입니다",
+      "introduction": "수북에서 수북하게"
     }
   },
   "home-page": {

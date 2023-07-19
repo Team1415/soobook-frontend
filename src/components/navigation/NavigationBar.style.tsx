@@ -1,6 +1,6 @@
 import { Box, styled } from '@mui/material';
 
-export const NavigationBarContainer = styled(Box)`
+export const NavigationBarBox = styled(Box)`
   display: flex;
   justify-content: space-between;
   width: 100%;
