@@ -1,22 +1,19 @@
-import { Stack, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 import { ReactComponent as SoobookLogo } from '@assets/soobook-logo.svg';
+import { SoobookIntroductionStack } from '@components/layout/SoobookIntroduction.style';
 
 const SoobookIntroduction = () => {
+  const { t } = useTranslation();
+
   return (
-    <Stack
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      height="100vh"
-      width="300px"
-      boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
-    >
-      <Typography fontWeight={700} textAlign="center" paddingBottom="6px">
-        수북에서 수북하게
+    <SoobookIntroductionStack>
+      <Typography variant="h4" align="center" paddingBottom={6}>
+        {t('common.message.introduction')}
       </Typography>
       <SoobookLogo />
-    </Stack>
+    </SoobookIntroductionStack>
   );
 };
 

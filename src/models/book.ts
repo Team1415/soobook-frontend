@@ -10,3 +10,9 @@ export interface Book {
   publishDatetime: Date;
   thumbnail: string;
 }
+
+export interface BookCardModel {
+  title: string;
+  hashtags: string[];
+  imageUrl: string;
+}

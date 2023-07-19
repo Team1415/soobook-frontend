@@ -26,7 +26,20 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: ['Noto Sans KR', 'sans-serif', '-apple-system', 'BlinkMacSystemFont'].join(','),
+    h4: {
+      fontSize: '20px',
+      fontWeight: 700,
+    },
+    h5: {
+      fontSize: '15px',
+      fontWeight: 400,
+    },
+    h6: {
+      fontSize: '12px',
+      fontWeight: 700,
+    },
   },
+  spacing: 1,
 });
 
 export default theme;
