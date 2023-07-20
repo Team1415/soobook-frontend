@@ -1,12 +1,14 @@
 import { Button, styled } from '@mui/material';
 
-export const StyledOnCategoryButton = styled(Button)`
-  border-radius: 4px;
-  background: #203c8e;
-`;
+export const StyledOnCategoryButton = styled(Button)({
+  borderRadius: '4px',
+  background: '#203C8E',
+  color: '#FFFFFF',
+});
 
-export const StyledOffCategoryButton = styled(Button)`
-  border-radius: 4px;
-  border: 1px solid #e4e4e4;
-  background: #fff;
-`;
+export const StyledOffCategoryButton = styled(Button)({
+  borderRadius: '4px',
+  border: '1px solid #E4E4E4',
+  background: '#FFF',
+  color: '#464646',
+});
