@@ -1,11 +1,15 @@
-import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
+
+import BookDetailHeader from '@components/navigation/BookDetailHeader';
 
 const DetailPage = () => {
   const { isbn = '' } = useParams();
-  const { t } = useTranslation();
 
-  return <>{`${t('detail-page.title.page-name')} ${isbn}`}</>;
+  return (
+    <>
+      <BookDetailHeader title={isbn} />
+    </>
+  );
 };
 
 export default DetailPage;
