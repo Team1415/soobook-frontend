@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 
 import UserHeader from '@components/header/UserHeader';
+import FullWidthTitle from '@components/layout/FullWidthTitle';
 import BookSlider from '@components/slider/BookSlider';
 import { Book, BookCardModel } from '@models/book';
 import { BookService } from '@services/BookService';
@@ -80,6 +81,7 @@ const HomePage = () => {
     return (
       <>
         <UserHeader />
+        <FullWidthTitle title="신간을 구경하세요" />
         <BookSlider books={sampleBooks} />
       </>
     );
