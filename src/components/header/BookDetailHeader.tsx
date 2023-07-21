@@ -5,7 +5,7 @@ import {
   BookDetailHeaderBox,
   EllipsisTypography,
   MenuBox,
-} from '@components/navigation/BookDetailHeader.style';
+} from '@components/header/BookDetailHeader.style';
 
 interface BookDetailHeaderProps {
   title: string;
