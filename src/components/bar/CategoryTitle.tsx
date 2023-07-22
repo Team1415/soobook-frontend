@@ -4,7 +4,7 @@ import {
   LeftTypography,
   RightTypography,
   TitleBox,
-} from '@components/layout/Title.style';
+} from '@components/bar/Title.style';
 
 interface CategoryTitleProps {
   category: string;

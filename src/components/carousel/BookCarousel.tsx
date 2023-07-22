@@ -1,21 +1,21 @@
 import Slider from 'react-slick';
 
-import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
 
 import BookCard from '@components/card/BookCard';
-import { SliderBox } from '@components/slider/BookSlider.style';
+import { CarouselBox } from '@components/carousel/BookCarousel.style';
 import { BookCardModel } from '@models/book';
 
-interface BookSliderProps {
+interface BookCarouselProps {
   books: BookCardModel[];
 }
 
-const BookSlider = (props: BookSliderProps) => {
+const BookCarousel = (props: BookCarouselProps) => {
   const { books } = props;
 
   return (
-    <SliderBox>
+    <CarouselBox>
       <Slider
         className="slider variable-width"
         infinite={false}
@@ -31,8 +31,8 @@ const BookSlider = (props: BookSliderProps) => {
           </div>
         ))}
       </Slider>
-    </SliderBox>
+    </CarouselBox>
   );
 };
 
-export default BookSlider;
+export default BookCarousel;

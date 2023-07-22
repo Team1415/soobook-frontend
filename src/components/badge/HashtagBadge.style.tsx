@@ -1,6 +1,6 @@
 import { Chip, css, styled } from '@mui/material';
 
-export const StyledChip = styled(Chip)`
+export const StyledBadge = styled(Chip)`
   height: 19px;
   max-width: 46px;
 

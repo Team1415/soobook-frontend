@@ -1,4 +1,4 @@
-import { LeftBox, LeftTypography, RightTypography, TitleBox } from '@components/layout/Title.style';
+import { LeftBox, LeftTypography, RightTypography, TitleBox } from '@components/bar/Title.style';
 
 interface TitleProps {
   leftLabel: string;
