@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 
 import HashtagBadge from '@components/badge/HashtagBadge';
+import Banner from '@components/bar/Banner';
 import CategoryTitle from '@components/bar/CategoryTitle';
 import PopularCategory from '@components/bar/PopularCategory';
 import Title from '@components/bar/Title';
@@ -96,6 +97,8 @@ const HomePage = () => {
     return (
       <>
         <UserHeader />
+
+        <Banner />
 
         <PopularCategory categories={sampleCategories} />
 
