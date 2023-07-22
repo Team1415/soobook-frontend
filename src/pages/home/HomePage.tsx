@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 
+import HashtagBadge from '@components/badge/HashtagBadge';
 import CategoryTitle from '@components/bar/CategoryTitle';
 import PopularCategory from '@components/bar/PopularCategory';
 import Title from '@components/bar/Title';
@@ -107,6 +108,10 @@ const HomePage = () => {
 
         <CategoryTitle category="컴퓨터" />
         <BookCarousel books={sampleBooks} />
+
+        <HashtagBadge type="simple" name="asdfasdfasdfasdfasdf" />
+        <HashtagBadge type="detail" name="asdfasdfasdfasdfasdf" />
+        <HashtagBadge type="outlined" name="asdfasdfasdfasdfasdf" />
       </>
     );
   }

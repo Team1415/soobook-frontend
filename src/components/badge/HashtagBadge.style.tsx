@@ -1,27 +1,36 @@
 import { Chip, css, styled } from '@mui/material';
 
-export const StyledBadge = styled(Chip)`
-  height: 19px;
-  max-width: 46px;
+import { BadgeType } from '@models/badge';
+
+export const StyledBadge = styled(Chip)<{ type: BadgeType }>`
+  height: ${({ type }) => (type === 'simple' ? '19px' : '22px')};
+  max-width: ${({ type }) => (type === 'simple' ? '46px' : undefined)};
 
   margin: 4;
 
-  border: 0px none;
-  border-radius: 8px;
+  border: ${({ type }) => (type === 'outlined' ? '1px #203c8e solid' : '0px none')};
+  border-radius: ${({ type }) => (type === 'outlined' ? '4px' : '8px')};
 
-  background-color: #f2f2f2;
+  background-color: ${({ type }) => (type === 'outlined' ? '#ffffff' : 'f2f2f2')};
 
   color: #203c8e;
-  font-size: 10px;
-  font-weight: 400;
+  font-size: ${({ type }) => (type === 'simple' ? '10px' : '11px')};
+  font-weight: ${({ type }) => (type === 'outlined' ? 500 : 400)};
   letter-spacing: -0.28px;
   line-height: normal;
   white-space: nowrap;
 
-  ${css`
-    & .MuiChip-label {
-      padding-left: 4px;
-      padding-right: 4px;
-    }
-  `}
+  ${({ type }) =>
+    type === 'simple'
+      ? css`
+          & .MuiChip-label {
+            padding-left: 4px;
+            padding-right: 4px;
+          }
+        `
+      : css`
+          & .MuiChip-label {
+            padding: 8px;
+          }
+        `}
 `;
