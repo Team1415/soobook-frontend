@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
 import { get } from 'lodash-es';
 
-import HashtagBadge from '@components/badge/HashtagChip';
+import HashtagBadge from '@components/badge/HashtagBadge';
 import {
   BookCardStack,
   HashtagStack,
