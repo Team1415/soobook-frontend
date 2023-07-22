@@ -2,7 +2,8 @@ import { useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 
 import UserHeader from '@components/header/UserHeader';
-import FullWidthTitle from '@components/layout/FullWidthTitle';
+import CategoryTitle from '@components/layout/CategoryTitle';
+import Title from '@components/layout/Title';
 import BookSlider from '@components/slider/BookSlider';
 import { Book, BookCardModel } from '@models/book';
 import { BookService } from '@services/BookService';
@@ -81,7 +82,15 @@ const HomePage = () => {
     return (
       <>
         <UserHeader />
-        <FullWidthTitle title="신간을 구경하세요" />
+
+        <Title
+          leftLabel="신간을 구경하세요"
+          rightLabel="더보기 >"
+          onClickRightLabel={() => alert('imhere')}
+        />
+        <BookSlider books={sampleBooks} />
+
+        <CategoryTitle category="컴퓨터" />
         <BookSlider books={sampleBooks} />
       </>
     );
