@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 
+import HashtagAutocomplete from '@components/autocomplete/HashtagAutocomplete';
 import HashtagBadge from '@components/badge/HashtagBadge';
 import Banner from '@components/bar/Banner';
 import CategoryTitle from '@components/bar/CategoryTitle';
@@ -86,6 +87,30 @@ const sampleBooks: BookCardModel[] = [
   },
 ];
 
+const sampleHashtags = [
+  {
+    code: '1',
+    label: '파이썬',
+  },
+  {
+    code: '2',
+    label: '러스트',
+  },
+  {
+    code: '3',
+    label: '리액트',
+  },
+  {
+    code: '4',
+    label: '스프링',
+  },
+  {
+    code: '5',
+    label:
+      '카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카',
+  },
+];
+
 const HomePage = () => {
   const { data, isLoading } = useQuery<Book[]>(['books', 'new'], BookService.getNewestBooks);
   const { t } = useTranslation();
@@ -100,6 +125,7 @@ const HomePage = () => {
 
         <Banner />
 
+        <HashtagAutocomplete hashtags={sampleHashtags} />
         <PopularCategory categories={sampleCategories} />
 
         <Title

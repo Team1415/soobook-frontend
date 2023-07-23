@@ -23,6 +23,13 @@ const theme = createTheme({
         },
       },
     },
+    MuiAutocomplete: {
+      styleOverrides: {
+        noOptions: {
+          fontSize: '12px',
+        },
+      },
+    },
   },
   typography: {
     fontFamily: ['Noto Sans KR', 'sans-serif', '-apple-system', 'BlinkMacSystemFont'].join(','),
