@@ -1,10 +1,27 @@
 import { useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 
+import HashtagBadge from '@components/badge/HashtagBadge';
+import Banner from '@components/bar/Banner';
+import CategoryTitle from '@components/bar/CategoryTitle';
+import PopularCategory from '@components/bar/PopularCategory';
+import Title from '@components/bar/Title';
+import BookCarousel from '@components/carousel/BookCarousel';
 import UserHeader from '@components/header/UserHeader';
-import BookSlider from '@components/slider/BookSlider';
 import { Book, BookCardModel } from '@models/book';
 import { BookService } from '@services/BookService';
+
+const sampleCategories = [
+  {
+    name: '파이썬',
+  },
+  {
+    name: '클론코딩',
+  },
+  {
+    name: '개발성장',
+  },
+];
 
 const sampleBooks: BookCardModel[] = [
   {
@@ -80,7 +97,24 @@ const HomePage = () => {
     return (
       <>
         <UserHeader />
-        <BookSlider books={sampleBooks} />
+
+        <Banner />
+
+        <PopularCategory categories={sampleCategories} />
+
+        <Title
+          leftLabel="신간을 구경하세요"
+          rightLabel="더보기 >"
+          onClickRightLabel={() => alert('imhere')}
+        />
+        <BookCarousel books={sampleBooks} />
+
+        <CategoryTitle category="컴퓨터" />
+        <BookCarousel books={sampleBooks} />
+
+        <HashtagBadge type="simple" name="asdfasdfasdfasdfasdf" />
+        <HashtagBadge type="detail" name="asdfasdfasdfasdfasdf" />
+        <HashtagBadge type="outlined" name="asdfasdfasdfasdfasdf" />
       </>
     );
   }

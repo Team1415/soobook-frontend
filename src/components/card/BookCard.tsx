@@ -1,6 +1,7 @@
 import { Typography } from '@mui/material';
 import { get } from 'lodash-es';
 
+import HashtagBadge from '@components/badge/HashtagBadge';
 import {
   BookCardStack,
   HashtagStack,
@@ -8,7 +9,6 @@ import {
   StyledImage,
   TitleStack,
 } from '@components/card/BookCard.style';
-import HashtagChip from '@components/chip/HashtagChip';
 import Space from '@components/layout/Space';
 import { BookCardModel } from '@models/book';
 
@@ -30,8 +30,8 @@ const BookCard = (props: BookCardProps) => {
         </Typography>
       </TitleStack>
       <HashtagStack direction="row" spacing={4}>
-        {get(hashtags, '0') && <HashtagChip name={hashtags[0]} />}
-        {get(hashtags, '1') && <HashtagChip name={hashtags[1]} />}
+        {get(hashtags, '0') && <HashtagBadge name={hashtags[0]} />}
+        {get(hashtags, '1') && <HashtagBadge name={hashtags[1]} />}
       </HashtagStack>
     </BookCardStack>
   );

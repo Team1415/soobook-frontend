@@ -6,6 +6,8 @@ export const BookCardStack = styled(Stack)`
   width: 120px;
   align-items: center;
   border-radius: 8px;
+
+  cursor: pointer;
 `;
 
 export const ImageStack = styled(Stack)`

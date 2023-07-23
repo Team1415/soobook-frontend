@@ -1,6 +1,6 @@
 import { Box, css, styled } from '@mui/material';
 
-export const SliderBox = styled(Box)`
+export const CarouselBox = styled(Box)`
   width: min(calc(100vw), ${(props) => props.theme.breakpoints.values.sm}px);
   background-color: #f3f3f3;
 
