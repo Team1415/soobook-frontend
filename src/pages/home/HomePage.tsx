@@ -89,25 +89,29 @@ const sampleBooks: BookCardModel[] = [
 
 const sampleHashtags = [
   {
-    code: '1',
+    code: 1,
     label: '파이썬',
   },
   {
-    code: '2',
+    code: 2,
     label: '러스트',
   },
   {
-    code: '3',
+    code: 3,
     label: '리액트',
   },
   {
-    code: '4',
+    code: 4,
     label: '스프링',
   },
   {
-    code: '5',
+    code: 5,
     label:
       '카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카',
+  },
+  {
+    code: 6,
+    label: 'react',
   },
 ];
 

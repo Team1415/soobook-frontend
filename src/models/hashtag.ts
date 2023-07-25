@@ -1,4 +1,4 @@
 export interface Hashtag {
-  code: string;
+  code: number;
   label: string;
 }
