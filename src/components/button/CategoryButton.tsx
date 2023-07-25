@@ -1,5 +1,5 @@
 import { ReactComponent as CategoryButtonIcon } from '@assets/category-button-icon.svg';
-import { StyledOffCategoryButton, StyledOnCategoryButton } from '@components/button/CategoryButton.style';
+import { StyledCategoryButton } from '@components/button/CategoryButton.style';
 
 interface CategoryButtonProps {
   title: string;
@@ -8,19 +8,8 @@ interface CategoryButtonProps {
 
 const CategoryButton = (props: CategoryButtonProps) => {
   const { title, active } = props;
-  const StyledCategoryButton = active ? StyledOnCategoryButton : StyledOffCategoryButton;
   return (
-    <StyledCategoryButton
-      sx={{
-        display: 'flex',
-        width: '51px',
-        padding: '12px 4px',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: '8px',
-      }}
-      variant={'contained'}
-    >
+    <StyledCategoryButton active={active}>
       <CategoryButtonIcon />
       {title}
     </StyledCategoryButton>
