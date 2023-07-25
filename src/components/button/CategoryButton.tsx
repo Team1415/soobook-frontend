@@ -3,12 +3,12 @@ import { StyledOffCategoryButton, StyledOnCategoryButton } from '@components/but
 
 interface CategoryButtonProps {
   title: string;
-  isOn?: boolean;
+  active?: boolean;
 }
 
 const CategoryButton = (props: CategoryButtonProps) => {
-  const { title, isOn } = props;
-  const StyledCategoryButton = isOn ? StyledOnCategoryButton : StyledOffCategoryButton;
+  const { title, active } = props;
+  const StyledCategoryButton = active ? StyledOnCategoryButton : StyledOffCategoryButton;
   return (
     <StyledCategoryButton
       sx={{
