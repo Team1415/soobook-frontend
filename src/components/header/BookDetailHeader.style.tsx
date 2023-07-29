@@ -22,6 +22,7 @@ export const MenuBox = styled(Box)`
 `;
 
 export const EllipsisTypography = styled(Typography)`
+  font-size: 14px;
   font-weight: 400;
   white-space: nowrap;
   overflow: hidden;
