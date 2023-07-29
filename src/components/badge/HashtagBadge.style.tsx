@@ -4,7 +4,7 @@ import { BadgeType } from '@models/badge';
 
 export const StyledBadge = styled(Chip)<{ type: BadgeType }>`
   height: ${({ type }) => (type === 'simple' ? '19px' : '22px')};
-  max-width: ${({ type }) => (type === 'simple' ? '46px' : undefined)};
+  max-width: ${({ type }) => (type === 'simple' || type === 'simple-large' ? '46px' : undefined)};
 
   margin: 4;
 
@@ -21,7 +21,7 @@ export const StyledBadge = styled(Chip)<{ type: BadgeType }>`
   white-space: nowrap;
 
   ${({ type }) =>
-    type === 'simple'
+    type === 'simple' || type === 'simple-large'
       ? css`
           & .MuiChip-label {
             padding-left: 4px;

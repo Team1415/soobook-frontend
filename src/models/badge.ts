@@ -1,1 +1,1 @@
-export type BadgeType = 'simple' | 'detail' | 'outlined' | 'delete';
+export type BadgeType = 'simple' | 'simple-large' | 'detail' | 'outlined' | 'delete';
