@@ -22,7 +22,7 @@ const CategoryTitle = (props: CategoryTitleProps) => {
   return (
     <TitleBox>
       <LeftBox>
-        <CategoryTypography>{t('home-page.label.category', { category })}</CategoryTypography>
+        <CategoryTypography>{t('home-page.label.category', { title: category })}</CategoryTypography>
         <LeftTypography>{t('home-page.label.popular-book')}</LeftTypography>
       </LeftBox>
       {rightLabel && <RightTypography onClick={() => onClickRightLabel?.()}>{rightLabel}</RightTypography>}

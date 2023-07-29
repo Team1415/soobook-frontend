@@ -1,6 +1,6 @@
 import { Box, Stack, styled } from '@mui/material';
 
-export const PopularCategoryBox = styled(Box)`
+export const PopularHashtagBox = styled(Box)`
   width: 100%;
   height: 34px;
 

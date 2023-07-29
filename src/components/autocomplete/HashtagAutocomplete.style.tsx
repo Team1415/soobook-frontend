@@ -53,6 +53,10 @@ export const StyledTextField = styled(TextField)`
       border: none;
     }
 
+    & .Mui-disabled {
+      cursor: pointer;
+    }
+
     & .MuiInputBase-root {
       color: #9f9f9f;
       font-size: 14px;
