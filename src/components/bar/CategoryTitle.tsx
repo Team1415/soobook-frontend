@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import {
   CategoryTypography,
   LeftBox,
@@ -15,11 +17,13 @@ interface CategoryTitleProps {
 const CategoryTitle = (props: CategoryTitleProps) => {
   const { category, rightLabel, onClickRightLabel } = props;
 
+  const { t } = useTranslation();
+
   return (
     <TitleBox>
       <LeftBox>
-        <CategoryTypography>{`${category} 카테고리`}</CategoryTypography>
-        <LeftTypography>{' 인기책들이에요'}</LeftTypography>
+        <CategoryTypography>{t('home-page.label.category', { category })}</CategoryTypography>
+        <LeftTypography>{t('home-page.label.popular-book')}</LeftTypography>
       </LeftBox>
       {rightLabel && <RightTypography onClick={() => onClickRightLabel?.()}>{rightLabel}</RightTypography>}
     </TitleBox>

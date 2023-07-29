@@ -1,4 +1,5 @@
 import { Stack } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 import { PopularBox, PopularCategoryBox, PopularItem } from '@components/bar/PopularCategory.style';
 
@@ -14,9 +15,11 @@ interface PopularCategoryProps {
 const PopularCategory = (props: PopularCategoryProps) => {
   const { categories = [] } = props;
 
+  const { t } = useTranslation();
+
   return (
     <PopularCategoryBox>
-      <PopularBox>{'인기'}</PopularBox>
+      <PopularBox>{t('home-page.label.popular')}</PopularBox>
       <Stack direction="row">
         {categories.map((category, index) => (
           <PopularItem key={`${category.name}_${index}`} onClick={() => category.onClick?.()}>

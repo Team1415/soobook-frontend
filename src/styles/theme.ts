@@ -28,6 +28,18 @@ const theme = createTheme({
         noOptions: {
           fontSize: '12px',
         },
+        option: {
+          borderBottom: '0.1px dashed rgba(159, 159, 159, 0.3)',
+          minHeight: '30px',
+          display: 'block',
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+        },
+        listbox: {
+          maxHeight: '200px',
+          fontSize: '12px',
+        },
       },
     },
   },

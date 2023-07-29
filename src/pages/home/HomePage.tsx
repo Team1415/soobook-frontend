@@ -133,9 +133,9 @@ const HomePage = () => {
         <PopularCategory categories={sampleCategories} />
 
         <Title
-          leftLabel="신간을 구경하세요"
-          rightLabel="더보기 >"
-          onClickRightLabel={() => alert('imhere')}
+          leftLabel={t('home-page.title.new')}
+          rightLabel={t('home-page.label.more')}
+          onClickRightLabel={() => alert('todo')}
         />
         <BookCarousel books={sampleBooks} />
 

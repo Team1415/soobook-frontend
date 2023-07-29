@@ -1,4 +1,6 @@
-import { Box, styled } from '@mui/material';
+import { Box, css, Stack, styled, TextField } from '@mui/material';
+
+import { ReactComponent as SearchIcon } from '@assets/search-icon.svg';
 
 export const HashtagAutocompleteBox = styled(Box)`
   width: 100%;
@@ -30,4 +32,36 @@ export const HashtagBadgeBox = styled(Box)<{ show: boolean }>`
       duration: props.theme.transitions.duration.enteringScreen,
       easing: props.theme.transitions.easing.easeInOut,
     })};
+`;
+
+export const HashtagTextFieldStack = styled(Stack)`
+  border-radius: 4px;
+  height: 44px;
+  width: 100%;
+  background-color: #f2f2f2;
+`;
+
+export const StyledSearchIcon = styled(SearchIcon)`
+  height: 16px;
+  width: 16px;
+  margin-left: 12px;
+`;
+
+export const StyledTextField = styled(TextField)`
+  ${css`
+    & fieldset {
+      border: none;
+    }
+
+    & .MuiInputBase-root {
+      color: #9f9f9f;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: -0.28px;
+    }
+
+    & .muioutlinedinput-root: {
+      padding-right: 0px !important;
+    }
+  `}
 `;
