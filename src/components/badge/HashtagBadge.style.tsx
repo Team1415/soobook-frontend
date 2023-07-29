@@ -34,3 +34,33 @@ export const StyledBadge = styled(Chip)<{ type: BadgeType }>`
           }
         `}
 `;
+
+export const StyledDeleteBadge = styled(Chip)`
+  max-width: 130px;
+  height: 21px;
+
+  border: 1px solid #cccccc;
+  border-radius: 20px;
+
+  background-color: #ffffff;
+
+  align-items: center;
+
+  color: #797979;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: -0.28px;
+
+  ${css`
+    & .MuiChip-label {
+      padding-left: 6px;
+      padding-right: 9px;
+    }
+
+    & .MuiChip-deleteIcon {
+      width: 12px;
+      height: 12px;
+      margin-right: 6px;
+    }
+  `}
+`;

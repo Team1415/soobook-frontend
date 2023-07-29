@@ -3,15 +3,23 @@
     "title": {},
     "label": {},
     "message": {
-      "is-loading": "로딩 중입니다",
-      "introduction": "수북에서 수북하게"
+      "introduction": "수북에서 수북하게",
+      "hello": "안녕하세요 ",
+      "sir": "님",
+      "introduce": "수북의 서비스를 둘러보세요"
     }
   },
   "home-page": {
     "title": {
-      "page-name": "홈 페이지"
+      "page-name": "홈 페이지",
+      "new": "신간을 구경하세요"
     },
-    "label": {},
+    "label": {
+      "more": "더보기 >",
+      "category": "{{title}} 카테고리",
+      "popular-book": " 인기책들이에요",
+      "popular": "인기"
+    },
     "message": {}
   },
   "search-page": {
@@ -19,7 +27,11 @@
       "page-name": "검색 페이지"
     },
     "label": {},
-    "message": {}
+    "message": {
+      "no-option": "해당하는 키워드가 없습니다. 다시 검색해주세요.",
+      "disable-autocomplete": "최대 {{count}}개까지 입력 가능합니다",
+      "placeholder": "키워드를 검색하세요"
+    }
   },
   "detail-page": {
     "title": {
