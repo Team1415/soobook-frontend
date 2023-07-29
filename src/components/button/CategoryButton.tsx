@@ -1,27 +1,20 @@
-import { ReactComponent as CategoryButtonIcon } from '@assets/category-button-icon.svg';
-import { StyledOffCategoryButton, StyledOnCategoryButton } from '@components/button/CategoryButton.style';
+import { MouseEventHandler, ReactNode } from 'react';
 
-interface CategoryButtonProps {
+import { StyledCategoryButton } from '@components/button/CategoryButton.style';
+
+
+interface Props {
   title: string;
-  isOn?: boolean;
+  icon: ReactNode;
+  onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
+  active?: boolean;
 }
 
-const CategoryButton = (props: CategoryButtonProps) => {
-  const { title, isOn } = props;
-  const StyledCategoryButton = isOn ? StyledOnCategoryButton : StyledOffCategoryButton;
+const CategoryButton = (props: Props) => {
+  const { title, icon, onClick, active } = props;
   return (
-    <StyledCategoryButton
-      sx={{
-        display: 'flex',
-        width: '51px',
-        padding: '12px 4px',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: '8px',
-      }}
-      variant={'contained'}
-    >
-      <CategoryButtonIcon />
+    <StyledCategoryButton active={active} onClick={onClick}>
+      {icon}
       {title}
     </StyledCategoryButton>
   );
