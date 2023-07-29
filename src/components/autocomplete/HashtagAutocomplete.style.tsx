@@ -60,7 +60,7 @@ export const StyledTextField = styled(TextField)`
       letter-spacing: -0.28px;
     }
 
-    & .muioutlinedinput-root: {
+    & .MuiOutlinedinput-root {
       padding-right: 0px !important;
     }
   `}
