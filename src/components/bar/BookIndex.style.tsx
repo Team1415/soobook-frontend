@@ -11,7 +11,7 @@ export const BookIndexBox = styled(Box)`
 `;
 
 export const StyledTypography = styled(Typography)`
-  color: '#464646';
+  color: #464646;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: -0.28px;
