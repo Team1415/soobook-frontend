@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import { ReactComponent as ChevronLeftIcon } from '@assets/chevron-left-icon.svg';
 import { ReactComponent as MenuIcon } from '@assets/menu-icon.svg';
 import {
@@ -7,19 +9,15 @@ import {
   MenuBox,
 } from '@components/header/BookDetailHeader.style';
 
-interface BookDetailHeaderProps {
-  title: string;
-}
-
-const BookDetailHeader = (props: BookDetailHeaderProps) => {
-  const { title } = props;
+const BookDetailHeader = () => {
+  const { t } = useTranslation();
 
   return (
     <BookDetailHeaderBox>
       <BackArrowBox>
         <ChevronLeftIcon />
       </BackArrowBox>
-      <EllipsisTypography variant="h6">{title}</EllipsisTypography>
+      <EllipsisTypography variant="h6">{t('detail-page.title.book-detail')}</EllipsisTypography>
       <MenuBox>
         <MenuIcon />
       </MenuBox>

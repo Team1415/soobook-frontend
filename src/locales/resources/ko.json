@@ -38,7 +38,8 @@
   },
   "detail-page": {
     "title": {
-      "page-name": "상세 페이지"
+      "page-name": "상세 페이지",
+      "book-detail": "책 정보"
     },
     "label": {},
     "message": {}
