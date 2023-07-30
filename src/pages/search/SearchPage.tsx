@@ -1,8 +1,11 @@
 import { css, keyframes, styled } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+import { isEmpty } from 'lodash-es';
 
 import HashtagAutocomplete from '@components/autocomplete/HashtagAutocomplete';
+import CategoryPopularHashtags from '@components/bar/CategoryPopularHashtags';
+import SearchResultHeader from '@components/header/SearchResultHeader';
 import useHeightAnimation from '@hooks/useHeightAnimation';
+import { useHashtagSearchConditionStore } from '@stores/useHashtagSearchConditionStore';
 
 const sampleHashtags = [
   {
@@ -54,13 +57,16 @@ const SearchPageAnimationContainer = styled('div')<{ animate: boolean; height: n
 `;
 
 const SearchPage = () => {
-  const { t } = useTranslation();
-
   const { animate, componentHeight } = useHeightAnimation();
+  const { hashtagSearchConditions } = useHashtagSearchConditionStore();
 
   return (
     <SearchPageAnimationContainer animate={animate} height={componentHeight || 0}>
       <HashtagAutocomplete type="search" hashtags={sampleHashtags} />
+      {!isEmpty(hashtagSearchConditions) && <SearchResultHeader total={0} />}
+      {isEmpty(hashtagSearchConditions) && (
+        <CategoryPopularHashtags category="컴퓨터" hashtags={sampleHashtags} />
+      )}
     </SearchPageAnimationContainer>
   );
 };
