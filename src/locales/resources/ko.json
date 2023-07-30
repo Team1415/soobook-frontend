@@ -39,9 +39,18 @@
   "detail-page": {
     "title": {
       "page-name": "상세 페이지",
-      "book-detail": "책 정보"
+      "book-detail": "책 정보",
+      "index": "목차",
+      "introduction": "소개"
     },
-    "label": {},
+    "label": {
+      "author": "저자",
+      "publisher": "출판사",
+      "page": "페이지",
+      "publicationDate": "출간일",
+      "isbn": "ISBN",
+      "price": "정가"
+    },
     "message": {}
   },
   "not-found-page": {
