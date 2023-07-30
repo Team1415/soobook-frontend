@@ -27,7 +27,8 @@
       "page-name": "검색 페이지"
     },
     "label": {
-      "category-popular-hashtag": "# {{name}} 카테고리의 인기 키워드"
+      "category-popular-hashtag": "# {{name}} 카테고리의 인기 키워드",
+      "total": "검색결과 {{count}}건"
     },
     "message": {
       "no-option": "해당하는 키워드가 없습니다. 다시 검색해주세요.",
