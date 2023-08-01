@@ -16,3 +16,7 @@ export interface BookCardModel {
   hashtags: string[];
   imageUrl: string;
 }
+
+export interface BookListCardModel extends BookCardModel {
+  publisher: string;
+}
