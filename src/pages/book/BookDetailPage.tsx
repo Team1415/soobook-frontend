@@ -34,7 +34,7 @@ const sampleIndexs: Index[] = [
   },
 ];
 
-const DetailPage = () => {
+const BookDetailPage = () => {
   const { id } = useParams();
 
   console.log('id', id);
@@ -66,4 +66,4 @@ const DetailPage = () => {
   );
 };
 
-export default DetailPage;
+export default BookDetailPage;

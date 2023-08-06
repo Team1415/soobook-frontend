@@ -1,70 +1,27 @@
-import { css, keyframes, styled } from '@mui/material';
+import { useQuery } from '@tanstack/react-query';
 import { isEmpty } from 'lodash-es';
 
 import HashtagAutocomplete from '@components/autocomplete/HashtagAutocomplete';
 import CategoryPopularHashtags from '@components/bar/CategoryPopularHashtags';
 import SearchResultHeader from '@components/header/SearchResultHeader';
 import useHeightAnimation from '@hooks/useHeightAnimation';
+import { Hashtag } from '@models/hashtag';
+import { SearchPageAnimationContainer } from '@pages/search/SearchPage.style';
+import { HashtagService } from '@services/HashtagService';
 import { useHashtagSearchConditionStore } from '@stores/useHashtagSearchConditionStore';
 
-const sampleHashtags = [
-  {
-    id: 1,
-    name: '파이썬',
-  },
-  {
-    id: 2,
-    name: '러스트',
-  },
-  {
-    id: 3,
-    name: '리액트',
-  },
-  {
-    id: 4,
-    name: '스프링',
-  },
-  {
-    id: 5,
-    name: '카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카',
-  },
-  {
-    id: 6,
-    name: 'react',
-  },
-];
-
-const moveInTop = keyframes`
-  from {
-    transform: translateY(var(--height));
-  }
-  to {
-    transform: translateY(0);
-  }
-`;
-
-const SearchPageAnimationContainer = styled('div')<{ animate: boolean; height: number }>`
-  --height: ${(props) => `${props.height}px`};
-
-  animation: ${(props) =>
-    props.animate
-      ? css`
-          ${moveInTop} 400ms;
-        `
-      : 'none'};
-  transform: translateY(${(props) => (props.animate ? 'var(--searchBoxTop)' : '0')});
-`;
-
 const SearchPage = () => {
+  const { data: hashtagData } = useQuery<Hashtag[]>(['hashtags'], HashtagService.getHashtags);
+
   const { animate, componentHeight } = useHeightAnimation();
   const { hashtagSearchConditions } = useHashtagSearchConditionStore();
 
   return (
     <SearchPageAnimationContainer animate={animate} height={componentHeight || 0}>
-      <HashtagAutocomplete type='search' hashtags={sampleHashtags} />
+      <HashtagAutocomplete type='search' hashtags={hashtagData} />
       {!isEmpty(hashtagSearchConditions) && <SearchResultHeader total={0} />}
       {isEmpty(hashtagSearchConditions) && (
-        <CategoryPopularHashtags category='컴퓨터' hashtags={sampleHashtags} />
+        <CategoryPopularHashtags category='컴퓨터' hashtags={hashtagData ?? []} />
       )}
     </SearchPageAnimationContainer>
   );
