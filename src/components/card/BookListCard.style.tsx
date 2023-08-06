@@ -26,13 +26,17 @@ export const BookListImage = styled('img')`
 
 export const BookListBodyStack = styled(Stack)`
   height: 71px;
+  width: calc(100% - 52px);
 `;
 
 export const BookListTitleTypography = styled(Typography)`
   height: 15px;
-  word-break: break-word;
   font-size: 12px;
   font-weight: 500;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 export const BookListPublisherTypography = styled(Typography)`
@@ -40,7 +44,10 @@ export const BookListPublisherTypography = styled(Typography)`
   color: #797979;
   font-size: 11px;
   font-weight: 400;
-  word-wrap: break-word;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 const BookListHashtagStack = (props: StackProps) => (
