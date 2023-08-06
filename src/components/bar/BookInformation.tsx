@@ -1,15 +1,15 @@
-import dayjs from 'dayjs';
 import { useTranslation } from 'react-i18next';
 
 import { BookInformationBox } from '@components/bar/BookInformation.style';
 import BookInformationItem from '@components/bar/BookInformationItem';
+import { DateUtil } from '@utils/DateUtil';
 
 interface BookInformationProps {
   author: string;
   publisher: string;
   page: number;
   publicationDate: string;
-  isbn: string;
+  isbn: number;
   price: number;
 }
 
@@ -25,9 +25,9 @@ const BookInformation = (props: BookInformationProps) => {
       <BookInformationItem label={t('detail-page.label.page')} content={`${page}p`} />
       <BookInformationItem
         label={t('detail-page.label.publicationDate')}
-        content={dayjs(publicationDate).format('YYYY.MM.DD')}
+        content={DateUtil.toString(publicationDate, 'YYYY.MM.DD')}
       />
-      <BookInformationItem label={t('detail-page.label.isbn')} content={isbn} />
+      <BookInformationItem label={t('detail-page.label.isbn')} content={`${isbn}`} />
       <BookInformationItem
         label={t('detail-page.label.price')}
         content={`${price.toLocaleString('ko-KR')}원`}
