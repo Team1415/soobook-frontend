@@ -17,7 +17,10 @@ export const ImageStack = styled(Stack)`
 export const StyledImage = styled('img')`
   width: 88px;
   height: 128px;
-  object-fit: cover;
+
+  object-fit: fill;
+
+  background-color: transparent;
 `;
 
 export const TitleStack = styled(Stack)`
