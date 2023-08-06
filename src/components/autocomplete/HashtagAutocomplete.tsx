@@ -51,12 +51,12 @@ const HashtagAutocomplete = (props: HashtagAutocompleteProps) => {
       <HashtagBadgeBox show={!isEmpty(hashtagSearchConditions)}>
         {hashtagSearchConditions.map((tag, index) => (
           <HashtagBadge
-            key={`${tag.label}_${index}`}
-            type="delete"
-            name={tag.label}
+            key={`${tag.name}_${index}`}
+            type='delete'
+            name={tag.name}
             onDelete={() =>
               setHashtagSearchConditions(
-                filter(hashtagSearchConditions, (hashtag: Hashtag) => hashtag.code !== tag.code),
+                filter(hashtagSearchConditions, (hashtag: Hashtag) => hashtag.id !== tag.id),
               )
             }
           />
@@ -73,7 +73,7 @@ const HashtagAutocomplete = (props: HashtagAutocompleteProps) => {
       >
         <Autocomplete
           ref={hashtagAutocompleteRef}
-          size="small"
+          size='small'
           multiple={true}
           disabled={type === 'home' || disableHashtagAutocomplete}
           disableClearable={true}
@@ -82,21 +82,21 @@ const HashtagAutocomplete = (props: HashtagAutocompleteProps) => {
           value={hashtagSearchConditions}
           filterSelectedOptions={true}
           autoHighlight={true}
-          getOptionLabel={(option) => option.label}
+          getOptionLabel={(option) => option.name}
           noOptionsText={t('search-page.message.no-option')}
-          popupIcon=""
-          isOptionEqualToValue={(option: Hashtag, value: Hashtag) => option.code === value.code}
+          popupIcon=''
+          isOptionEqualToValue={(option: Hashtag, value: Hashtag) => option.id === value.id}
           renderTags={() => null}
           renderInput={(params: AutocompleteRenderInputParams) => (
             <HashtagTextFieldStack
-              direction="row"
-              alignItems="center"
+              direction='row'
+              alignItems='center'
               sx={{ cursor: type === 'home' ? 'pointer' : undefined }}
             >
               <StyledSearchIcon />
               <StyledTextField
                 {...params}
-                size="small"
+                size='small'
                 placeholder={
                   disableHashtagAutocomplete
                     ? t('search-page.message.disable-autocomplete', { count: limitCountOfHashtag })

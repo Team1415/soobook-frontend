@@ -15,16 +15,16 @@ const UserHeader = () => {
       <TypoBox>
         {userName ? (
           <>
-            <Typography variant="h5" whiteSpace="pre">
+            <Typography variant='h5' whiteSpace='pre'>
               {t('common.message.hello')}
             </Typography>
-            <Typography variant="h5" fontWeight="700">
+            <Typography variant='h5' fontWeight='700'>
               {userName}
             </Typography>
-            <Typography variant="h5">{t('common.message.sir')}</Typography>
+            <Typography variant='h5'>{t('common.message.sir')}</Typography>
           </>
         ) : (
-          <Typography variant="h5">{t('common.message.introduce')}</Typography>
+          <Typography variant='h5'>{t('common.message.introduce')}</Typography>
         )}
       </TypoBox>
 

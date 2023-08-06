@@ -43,22 +43,22 @@ const DetailPage = () => {
     <>
       <BookDetailHeader />
 
-      <BookImageWithBlurredBackground imageUrl="https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F5069969%3Ftimestamp%3D20230307160031" />
+      <BookImageWithBlurredBackground imageUrl='https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F5069969%3Ftimestamp%3D20230307160031' />
 
-      <BookDetailTitle title="The Rust Programming Language (Covers Rust 2018)" hashtags={sampleHashtags} />
+      <BookDetailTitle title='The Rust Programming Language (Covers Rust 2018)' hashtags={sampleHashtags} />
       <GrayDivider />
 
       <BookInformation
-        author="Glory Song"
-        publisher="지호북스"
+        author='Glory Song'
+        publisher='지호북스'
         page={127}
-        publicationDate="2020/07/13"
-        isbn="1234567890"
+        publicationDate='2020/07/13'
+        isbn='1234567890'
         price={47900}
       />
       <GrayDivider />
 
-      <BookIntroduction content="Rust is proving to be a productive tool for collaborating among large teams of developers with varying levels of systems programming knowledge. Low-level code is prone to various subtle bugs, which in most other languages can be caught only through extensive testing and careful code review by experienced developers. In Rust, the compiler plays a gatekeeper role by refusing to compile code with these elusive bugs, including concurrency bugs. By working alongside the compiler, the team can spend their time focusing on the program’s logic rather than chasing down bugs." />
+      <BookIntroduction content='Rust is proving to be a productive tool for collaborating among large teams of developers with varying levels of systems programming knowledge. Low-level code is prone to various subtle bugs, which in most other languages can be caught only through extensive testing and careful code review by experienced developers. In Rust, the compiler plays a gatekeeper role by refusing to compile code with these elusive bugs, including concurrency bugs. By working alongside the compiler, the team can spend their time focusing on the program’s logic rather than chasing down bugs.' />
       <GrayDivider />
 
       <BookIndex indexs={sampleIndexs} />

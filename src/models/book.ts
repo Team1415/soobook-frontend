@@ -1,3 +1,5 @@
+import { Hashtag } from '@models/hashtag';
+
 export interface Book {
   id: number;
   isbn10: number;
@@ -9,10 +11,11 @@ export interface Book {
   status: string;
   publishDatetime: Date;
   thumbnail: string;
+  hashtags: Hashtag[];
 }
 
 export interface BookCardModel {
   title: string;
-  hashtags: string[];
-  imageUrl: string;
+  hashtags: Hashtag[];
+  thumbnail: string;
 }

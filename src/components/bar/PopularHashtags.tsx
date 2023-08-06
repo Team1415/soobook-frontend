@@ -20,16 +20,16 @@ const PopularHashtags = (props: PopularHashtagsProps) => {
   return (
     <PopularHashtagBox>
       <PopularBox>{t('home-page.label.popular')}</PopularBox>
-      <Stack direction="row">
+      <Stack direction='row'>
         {hashtags.map((hashtag, index) => (
           <PopularItem
-            key={`${hashtag.label}_${index}`}
+            key={`${hashtag.name}_${index}`}
             onClick={() => {
               navigate('/search');
               setHashtagSearchConditions([hashtag]);
             }}
           >
-            {`#${hashtag.label}`}
+            {`#${hashtag.name}`}
           </PopularItem>
         ))}
       </Stack>

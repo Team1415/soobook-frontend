@@ -17,7 +17,7 @@ const BookCarousel = (props: BookCarouselProps) => {
   return (
     <CarouselBox>
       <Slider
-        className="slider variable-width"
+        className='slider variable-width'
         infinite={false}
         slidesToShow={1}
         slidesToScroll={1}

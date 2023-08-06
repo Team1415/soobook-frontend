@@ -14,7 +14,7 @@ const BookDetailTitle = (props: BookDetailTitleProps) => {
       <TitleTypography>{title}</TitleTypography>
       <HashtagBox>
         {hashtags.map((hashtag, index) => (
-          <HashtagBadge key={`${hashtag}_${index}`} type="detail" name={hashtag} />
+          <HashtagBadge key={`${hashtag}_${index}`} type='detail' name={hashtag} />
         ))}
       </HashtagBox>
     </BookDetailTitleBox>

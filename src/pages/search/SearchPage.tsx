@@ -9,29 +9,28 @@ import { useHashtagSearchConditionStore } from '@stores/useHashtagSearchConditio
 
 const sampleHashtags = [
   {
-    code: 1,
-    label: '파이썬',
+    id: 1,
+    name: '파이썬',
   },
   {
-    code: 2,
-    label: '러스트',
+    id: 2,
+    name: '러스트',
   },
   {
-    code: 3,
-    label: '리액트',
+    id: 3,
+    name: '리액트',
   },
   {
-    code: 4,
-    label: '스프링',
+    id: 4,
+    name: '스프링',
   },
   {
-    code: 5,
-    label:
-      '카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카',
+    id: 5,
+    name: '카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카카프카',
   },
   {
-    code: 6,
-    label: 'react',
+    id: 6,
+    name: 'react',
   },
 ];
 
@@ -62,10 +61,10 @@ const SearchPage = () => {
 
   return (
     <SearchPageAnimationContainer animate={animate} height={componentHeight || 0}>
-      <HashtagAutocomplete type="search" hashtags={sampleHashtags} />
+      <HashtagAutocomplete type='search' hashtags={sampleHashtags} />
       {!isEmpty(hashtagSearchConditions) && <SearchResultHeader total={0} />}
       {isEmpty(hashtagSearchConditions) && (
-        <CategoryPopularHashtags category="컴퓨터" hashtags={sampleHashtags} />
+        <CategoryPopularHashtags category='컴퓨터' hashtags={sampleHashtags} />
       )}
     </SearchPageAnimationContainer>
   );

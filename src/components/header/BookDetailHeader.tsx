@@ -17,7 +17,7 @@ const BookDetailHeader = () => {
       <BackArrowBox>
         <ChevronLeftIcon />
       </BackArrowBox>
-      <EllipsisTypography variant="h6">{t('detail-page.title.book-detail')}</EllipsisTypography>
+      <EllipsisTypography variant='h6'>{t('detail-page.title.book-detail')}</EllipsisTypography>
       <MenuBox>
         <MenuIcon />
       </MenuBox>
