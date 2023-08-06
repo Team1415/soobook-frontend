@@ -17,6 +17,7 @@ export interface Book {
 }
 
 export interface BookCardModel {
+  id: number;
   title: string;
   hashtags: Hashtag[];
   thumbnail: string;

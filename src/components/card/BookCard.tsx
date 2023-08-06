@@ -1,5 +1,6 @@
 import { Typography } from '@mui/material';
 import { get } from 'lodash-es';
+import { useNavigate } from 'react-router-dom';
 
 import HashtagBadge from '@components/badge/HashtagBadge';
 import {
@@ -15,10 +16,12 @@ import { BookCardModel } from '@models/book';
 type BookCardProps = BookCardModel;
 
 const BookCard = (props: BookCardProps) => {
-  const { thumbnail, title, hashtags } = props;
+  const { thumbnail, title, hashtags, id } = props;
+
+  const navigate = useNavigate();
 
   return (
-    <BookCardStack>
+    <BookCardStack onClick={() => navigate(`/book/${id}`)}>
       <Space y={12} />
       <ImageStack>
         <StyledImage src={thumbnail} alt={title} />
