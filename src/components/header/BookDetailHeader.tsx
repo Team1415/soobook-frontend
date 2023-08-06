@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 import { ReactComponent as ChevronLeftIcon } from '@assets/chevron-left-icon.svg';
 import { ReactComponent as MenuIcon } from '@assets/menu-icon.svg';
@@ -11,11 +12,12 @@ import {
 
 const BookDetailHeader = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <BookDetailHeaderBox>
       <BackArrowBox>
-        <ChevronLeftIcon />
+        <ChevronLeftIcon onClick={() => navigate(-1)} />
       </BackArrowBox>
       <EllipsisTypography variant='h6'>{t('detail-page.title.book-detail')}</EllipsisTypography>
       <MenuBox>

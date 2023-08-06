@@ -42,6 +42,11 @@ const theme = createTheme({
         },
       },
     },
+    MuiSkeleton: {
+      defaultProps: {
+        animation: 'wave',
+      },
+    },
   },
   typography: {
     fontFamily: ['Noto Sans KR', 'sans-serif', '-apple-system', 'BlinkMacSystemFont'].join(','),
