@@ -8,113 +8,44 @@ import PopularHashtags from '@components/bar/PopularHashtags';
 import Title from '@components/bar/Title';
 import BookCarousel from '@components/carousel/BookCarousel';
 import UserHeader from '@components/header/UserHeader';
-import { Book, BookCardModel } from '@models/book';
+import { Book } from '@models/book';
+import { Hashtag } from '@models/hashtag';
 import { BookService } from '@services/BookService';
-
-const sampleHashtags = [
-  {
-    code: 1,
-    label: '파이썬',
-  },
-  {
-    code: 2,
-    label: '러스트',
-  },
-  {
-    code: 3,
-    label: '리액트',
-  },
-];
-
-const sampleBooks: BookCardModel[] = [
-  {
-    title: 'The Rust Programming Language (Covers Rust 2018)',
-    hashtags: ['러스트', '초급'],
-    imageUrl:
-      'https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F5069969%3Ftimestamp%3D20230307160031',
-  },
-  {
-    title: 'The Rust Programming Language (Covers Rust 2018)',
-    hashtags: ['러스트', '초급'],
-    imageUrl:
-      'https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F5069969%3Ftimestamp%3D20230307160031',
-  },
-  {
-    title: 'The Rust Programming Language (Covers Rust 2018)',
-    hashtags: ['러스트', '초급'],
-    imageUrl:
-      'https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F5069969%3Ftimestamp%3D20230307160031',
-  },
-  {
-    title: 'The Rust Programming Language (Covers Rust 2018)',
-    hashtags: ['러스트', '초급'],
-    imageUrl:
-      'https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F5069969%3Ftimestamp%3D20230307160031',
-  },
-  {
-    title: 'The Rust Programming Language (Covers Rust 2018)',
-    hashtags: ['러스트', '초급'],
-    imageUrl:
-      'https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F5069969%3Ftimestamp%3D20230307160031',
-  },
-  {
-    title: 'The Rust Programming Language (Covers Rust 2018)',
-    hashtags: ['러스트', '초급'],
-    imageUrl:
-      'https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F5069969%3Ftimestamp%3D20230307160031',
-  },
-  {
-    title: 'The Rust Programming Language (Covers Rust 2018)',
-    hashtags: ['러스트', '초급'],
-    imageUrl:
-      'https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F5069969%3Ftimestamp%3D20230307160031',
-  },
-  {
-    title: 'The Rust Programming Language (Covers Rust 2018)',
-    hashtags: ['러스트', '초급'],
-    imageUrl:
-      'https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F5069969%3Ftimestamp%3D20230307160031',
-  },
-  {
-    title: 'The Rust Programming Language (Covers Rust 2018)',
-    hashtags: ['러스트', '초급'],
-    imageUrl:
-      'https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F5069969%3Ftimestamp%3D20230307160031',
-  },
-  {
-    title: 'The Rust Programming Language (Covers Rust 2018)',
-    hashtags: ['러스트', '초급'],
-    imageUrl:
-      'https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F5069969%3Ftimestamp%3D20230307160031',
-  },
-];
+import { HashtagService } from '@services/HashtagService';
 
 const HomePage = () => {
-  const { data, isLoading } = useQuery<Book[]>(['books', 'new'], BookService.getNewestBooks);
+  const { data: newBooks, isLoading: isNewBookLoading } = useQuery<Book[]>(
+    ['books', 'new'],
+    BookService.getNewestBooks,
+  );
+  const { data: hashtagData, isLoading: isHashtagLoading } = useQuery<Hashtag[]>(
+    ['hashtags'],
+    HashtagService.getHashtags,
+  );
+
   const { t } = useTranslation();
 
-  if (isLoading) {
+  if (isNewBookLoading || isHashtagLoading) {
     return <></>;
   } else {
-    console.log('data', data);
     return (
       <>
         <UserHeader />
 
         <Banner />
 
-        <HashtagAutocomplete type="home" />
-        <PopularHashtags hashtags={sampleHashtags} />
+        <HashtagAutocomplete type='home' />
+        <PopularHashtags hashtags={hashtagData?.slice(0, 3)} />
 
         <Title
           leftLabel={t('home-page.title.new')}
           rightLabel={t('home-page.label.more')}
           onClickRightLabel={() => alert('todo')}
         />
-        <BookCarousel books={sampleBooks} />
+        <BookCarousel books={newBooks || []} />
 
-        <CategoryTitle category="컴퓨터" />
-        <BookCarousel books={sampleBooks} />
+        <CategoryTitle category='컴퓨터' />
+        <BookCarousel books={newBooks || []} />
       </>
     );
   }

@@ -30,9 +30,9 @@ const CategoryPopularHashtags = (props: CategoryPopularHashtagsProps) => {
         <HashtagBadgeBox>
           {hashtags.map((hashtag, index) => (
             <HashtagBadge
-              key={`${hashtag.label}_${index}`}
-              type="outlined"
-              name={hashtag.label}
+              key={`${hashtag.name}_${index}`}
+              type='outlined'
+              name={hashtag.name}
               onClick={() => setHashtagSearchConditions([hashtag])}
             />
           ))}

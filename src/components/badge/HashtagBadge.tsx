@@ -12,7 +12,7 @@ const HashtagBadge = (props: HashtagBadgeProps) => {
   const { type = 'simple', name, onClick, onDelete } = props;
 
   return onDelete ? (
-    <StyledDeleteBadge variant="outlined" label={name} onClick={onClick} onDelete={onDelete} />
+    <StyledDeleteBadge variant='outlined' label={name} onClick={onClick} onDelete={onDelete} />
   ) : (
     <StyledBadge type={type} label={name} onClick={onClick} />
   );

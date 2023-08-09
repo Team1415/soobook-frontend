@@ -1,7 +1,12 @@
 {
   "common": {
     "title": {},
-    "label": {},
+    "label": {
+      "sort": {
+        "RELATIVE": "관련순",
+        "NEW": "최신순"
+      }
+    },
     "message": {
       "introduction": "수북에서 수북하게",
       "hello": "안녕하세요 ",
