@@ -1,7 +1,7 @@
 import { Stack, StackProps, styled, Typography } from '@mui/material';
 
 const BookListCardStack = (props: StackProps) => (
-  <Stack direction="row" spacing="8px" {...props}>
+  <Stack direction='row' spacing='8px' {...props}>
     {props.children}
   </Stack>
 );
@@ -51,7 +51,7 @@ export const BookListPublisherTypography = styled(Typography)`
 `;
 
 const BookListHashtagStack = (props: StackProps) => (
-  <Stack direction="row" spacing="4px">
+  <Stack direction='row' spacing='4px'>
     {props.children}
   </Stack>
 );

@@ -14,12 +14,12 @@ import { BookListCardModel } from '@models/book';
 type BookListCardProps = BookListCardModel;
 
 const BookListCard = (props: BookListCardProps) => {
-  const { publisher, imageUrl, title, hashtags } = props;
+  const { publisher, thumbnail, title, hashtags } = props;
 
   return (
     <StyledBookListCardStack>
       <BookListImageStack>
-        <BookListImage src={imageUrl} alt={title} />
+        <BookListImage src={thumbnail} alt={title} />
       </BookListImageStack>
       <BookListBodyStack>
         <Space y={3} />
@@ -29,7 +29,7 @@ const BookListCard = (props: BookListCardProps) => {
         <Space y={13} />
         <StyledBookListHashtagStack>
           {hashtags.map((hashtag) => (
-            <HashtagBadge name={hashtag} type="detail" key={`detail_hashtag_${hashtag}`} />
+            <HashtagBadge name={hashtag.name} type='detail' key={`detail_hashtag_${hashtag.name}`} />
           ))}
         </StyledBookListHashtagStack>
       </BookListBodyStack>
