@@ -40,3 +40,7 @@ export interface BookDetail {
   hashtags: Hashtag[];
   indexs: Index[];
 }
+
+export interface BookListCardModel extends BookCardModel {
+  publisher: string;
+}
