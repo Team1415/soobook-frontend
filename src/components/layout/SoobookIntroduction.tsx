@@ -9,7 +9,7 @@ const SoobookIntroduction = () => {
 
   return (
     <SoobookIntroductionStack>
-      <Typography variant="h4" align="center" paddingBottom={6}>
+      <Typography variant='h4' align='center' paddingBottom={6}>
         {t('common.message.introduction')}
       </Typography>
       <SoobookLogo />

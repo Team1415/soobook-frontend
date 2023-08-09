@@ -2,7 +2,6 @@ import { MouseEventHandler, ReactNode } from 'react';
 
 import { StyledCategoryButton } from '@components/button/CategoryButton.style';
 
-
 interface Props {
   title: string;
   icon: ReactNode;

@@ -10,9 +10,9 @@ const SoobookAvartar = (props: SoobookAvartarProps) => {
   return (
     <>
       {name ? (
-        <StyledAvartar variant="rounded">{name}</StyledAvartar>
+        <StyledAvartar variant='rounded'>{name}</StyledAvartar>
       ) : (
-        <StyledAvartar variant="square" src="/src/assets/fallback-user-icon.svg" />
+        <StyledAvartar variant='square' src='/src/assets/fallback-user-icon.svg' />
       )}
     </>
   );

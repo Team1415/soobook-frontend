@@ -1,31 +1,61 @@
 {
   "common": {
     "title": {},
-    "label": {},
+    "label": {
+      "sort": {
+        "RELATIVE": "관련순",
+        "NEW": "최신순"
+      }
+    },
     "message": {
-      "is-loading": "로딩 중입니다",
-      "introduction": "수북에서 수북하게"
+      "introduction": "수북에서 수북하게",
+      "hello": "안녕하세요 ",
+      "sir": "님",
+      "introduce": "수북의 서비스를 둘러보세요"
     }
   },
   "home-page": {
     "title": {
-      "page-name": "홈 페이지"
+      "page-name": "홈 페이지",
+      "new": "신간을 구경하세요"
     },
-    "label": {},
+    "label": {
+      "more": "더보기 >",
+      "category": "{{title}} 카테고리",
+      "popular-book": " 인기책들이에요",
+      "popular": "인기"
+    },
     "message": {}
   },
   "search-page": {
     "title": {
       "page-name": "검색 페이지"
     },
-    "label": {},
-    "message": {}
+    "label": {
+      "category-popular-hashtag": "# {{name}} 카테고리의 인기 키워드",
+      "total": "검색결과 {{count}}건"
+    },
+    "message": {
+      "no-option": "해당하는 키워드가 없습니다. 다시 검색해주세요.",
+      "disable-autocomplete": "최대 {{count}}개까지 입력 가능합니다",
+      "placeholder": "키워드를 검색하세요"
+    }
   },
   "detail-page": {
     "title": {
-      "page-name": "상세 페이지"
+      "page-name": "상세 페이지",
+      "book-detail": "책 정보",
+      "index": "목차",
+      "introduction": "소개"
     },
-    "label": {},
+    "label": {
+      "author": "저자",
+      "publisher": "출판사",
+      "page": "페이지",
+      "publicationDate": "출간일",
+      "isbn": "ISBN",
+      "price": "정가"
+    },
     "message": {}
   },
   "not-found-page": {
