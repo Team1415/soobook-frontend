@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { Autocomplete, AutocompleteRenderInputParams } from '@mui/material';
 import { filter, isEmpty } from 'lodash-es';
@@ -36,6 +36,8 @@ const HashtagAutocomplete = (props: HashtagAutocompleteProps) => {
 
   const hashtagAutocompleteRef = useRef<HTMLDivElement>(null);
 
+  const [open, setOpen] = useState(false);
+
   useEffect(() => {
     if (type === 'home') {
       initializeHashtagSearchConditions();
@@ -44,6 +46,7 @@ const HashtagAutocomplete = (props: HashtagAutocompleteProps) => {
 
   const onChangeAutocomplete = (event: unknown, value: Hashtag[]) => {
     setHashtagSearchConditions(value);
+    setOpen(false);
   };
 
   return (
@@ -75,7 +78,8 @@ const HashtagAutocomplete = (props: HashtagAutocompleteProps) => {
           ref={hashtagAutocompleteRef}
           size='small'
           multiple={true}
-          disabled={type === 'home' || disableHashtagAutocomplete}
+          open={open}
+          disabled={disableHashtagAutocomplete}
           disableClearable={true}
           getOptionDisabled={() => disableHashtagAutocomplete}
           options={hashtags}
@@ -92,6 +96,7 @@ const HashtagAutocomplete = (props: HashtagAutocompleteProps) => {
               direction='row'
               alignItems='center'
               sx={{ cursor: type === 'home' ? 'pointer' : undefined }}
+              onClick={() => setOpen(true)}
             >
               <StyledSearchIcon />
               <StyledTextField
@@ -102,6 +107,9 @@ const HashtagAutocomplete = (props: HashtagAutocompleteProps) => {
                     ? t('search-page.message.disable-autocomplete', { count: limitCountOfHashtag })
                     : t('search-page.message.placeholder')
                 }
+                onChange={() => setOpen(true)}
+                onBlur={() => setOpen(false)}
+                autoFocus={type === 'search'}
               />
             </HashtagTextFieldStack>
           )}
