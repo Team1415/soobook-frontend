@@ -1,4 +1,4 @@
 export enum BookSort {
-  RELATIVE = 'relative',
   NEW = 'new',
+  POPULAR = 'popular',
 }

@@ -1,19 +1,23 @@
 import { create } from 'zustand';
 
+import { BookSort } from '@constants/sort';
 import { Hashtag } from '@models/hashtag';
 
 interface HashtagSearchConditionState {
   hashtagSearchConditions: Hashtag[];
   limitCountOfHashtag: number;
   disableHashtagAutocomplete: boolean;
+  sort: BookSort;
   setHashtagSearchConditions: (param: Hashtag[]) => void;
   initializeHashtagSearchConditions: () => void;
+  setSort: (param: BookSort) => void;
 }
 
 export const useHashtagSearchConditionStore = create<HashtagSearchConditionState>((set) => ({
   hashtagSearchConditions: [],
   limitCountOfHashtag: 5,
   disableHashtagAutocomplete: false,
+  sort: BookSort.POPULAR,
   setHashtagSearchConditions: (param: Hashtag[]) =>
     set((state: HashtagSearchConditionState) => ({
       hashtagSearchConditions: [...param],
@@ -24,4 +28,5 @@ export const useHashtagSearchConditionStore = create<HashtagSearchConditionState
       hashtagSearchConditions: [],
       disableHashtagAutocomplete: false,
     })),
+  setSort: (param: BookSort) => set(() => ({ sort: param })),
 }));

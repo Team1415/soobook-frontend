@@ -3,8 +3,8 @@
     "title": {},
     "label": {
       "sort": {
-        "RELATIVE": "관련순",
-        "NEW": "최신순"
+        "popular": "인기순",
+        "new": "최신순"
       }
     },
     "message": {

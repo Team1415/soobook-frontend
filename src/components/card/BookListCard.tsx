@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 import HashtagBadge from '@components/badge/HashtagBadge';
 import {
   BookListBodyStack,
@@ -14,10 +16,12 @@ import { BookListCardModel } from '@models/book';
 type BookListCardProps = BookListCardModel;
 
 const BookListCard = (props: BookListCardProps) => {
-  const { publisher, thumbnail, title, hashtags } = props;
+  const { publisher, thumbnail, title, hashtags, id } = props;
+
+  const navigate = useNavigate();
 
   return (
-    <StyledBookListCardStack>
+    <StyledBookListCardStack onClick={() => navigate(`/book/${id}`)}>
       <BookListImageStack>
         <BookListImage src={thumbnail} alt={title} />
       </BookListImageStack>

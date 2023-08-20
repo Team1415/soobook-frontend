@@ -1,4 +1,4 @@
-import { css, keyframes, styled } from '@mui/material';
+import { Box, css, keyframes, styled } from '@mui/material';
 
 const moveInTop = keyframes`
   from {
@@ -19,4 +19,10 @@ export const SearchPageAnimationContainer = styled('div')<{ animate: boolean; he
         `
       : 'none'};
   transform: translateY(${(props) => (props.animate ? 'var(--searchBoxTop)' : '0')});
+`;
+
+export const SearchPageContainer = styled(Box)`
+  min-height: calc(100vh - 52px);
+
+  background-color: #f2f2f2;
 `;
