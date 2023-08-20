@@ -1,4 +1,5 @@
 import { QueryCache, QueryClient } from '@tanstack/react-query';
+import { get } from 'lodash-es';
 
 export const queryClient = new QueryClient({
   defaultOptions: {
@@ -6,6 +7,7 @@ export const queryClient = new QueryClient({
       retry: false,
       refetchOnWindowFocus: false,
       networkMode: 'always',
+      select: (data: unknown) => get(data, ['body', 'result']),
     },
   },
   queryCache: new QueryCache({

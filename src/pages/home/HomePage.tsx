@@ -16,7 +16,7 @@ import { HashtagService } from '@services/HashtagService';
 const HomePage = () => {
   const { data: newBooks, isLoading: isNewBookLoading } = useQuery<Book[]>(
     ['books', 'new'],
-    BookService.getNewestBooks,
+    () => BookService.getNewBooks(1), // TODO : category id로 변경
   );
   const { data: hashtagData, isLoading: isHashtagLoading } = useQuery<Hashtag[]>(
     ['hashtags'],
