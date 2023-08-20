@@ -35,7 +35,7 @@ const HomePage = () => {
         <Banner />
 
         <HashtagAutocomplete type='home' />
-        <PopularHashtags hashtags={hashtagData?.slice(0, 3)} />
+        <PopularHashtags hashtags={hashtagData} />
 
         <Title
           leftLabel={t('home-page.title.new')}
