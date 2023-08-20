@@ -12,3 +12,15 @@ export class ApiError extends Error {
 
   url: string;
 }
+
+export interface ApiResponse<T> {
+  headers: { [x: string]: string };
+  statusCode: string;
+  statusCodeValue: number;
+  body: {
+    domain: string;
+    success: boolean;
+    apiVersion: string;
+    result?: T;
+  };
+}

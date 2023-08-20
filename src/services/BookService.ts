@@ -3,8 +3,12 @@ import { ApiPath } from '@constants/api';
 import { Book, BookDetail } from '@models/book';
 
 export namespace BookService {
-  export const getNewestBooks = async () => {
-    return (await axiosInstance.get<Book[]>(ApiPath.BOOK.GET_NEWEST)).data;
+  export const getNewBooks = async (categoryId: number) => {
+    return (
+      await axiosInstance.get<Book[]>(ApiPath.BOOK.GET_BOOKS, {
+        params: { type: 'new', category: categoryId },
+      })
+    ).data;
   };
 
   export const getBook = async (id?: string | number) => {
