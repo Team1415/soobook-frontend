@@ -36,8 +36,8 @@ yarn lint
 
 ## mocking server 사용
 
-- mock 사용하고 싶다면, `.env.development`에서 `VITE_APP_MOCK=true`로 변경
-- mock 해제 시 `.env.development`에서 `VITE_APP_MOCK=false`로 변경
+- mock 사용하고 싶다면, `yarn mock`
+- mock 해제 시 `yarn dev`
 
 ## conventions
 
