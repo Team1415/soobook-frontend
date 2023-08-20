@@ -10,12 +10,13 @@ export const handlers = [
   rest.get(`${ApiPath.BOOK.GET_BOOKS}`, (req, res, ctx) => {
     const type = req.url.searchParams.get('type');
     const category = req.url.searchParams.get('category');
-    const hashtags: string[] = JSON.parse(req.url.searchParams.get('hashtags') ?? '[]');
+    const hashtags = req.url.searchParams.get('hashtags');
 
     console.log('GET_BOOKS', 'type', type, 'category', category, 'hashtags', hashtags);
 
     return res(
       ctx.status(200),
+      ctx.delay(2000),
       ctx.json<ApiResponse<Book[]>>({
         headers: {},
         statusCode: 'OK',

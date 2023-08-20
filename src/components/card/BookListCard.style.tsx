@@ -12,6 +12,11 @@ export const StyledBookListCardStack = styled(BookListCardStack)`
   height: 95px;
   border-radius: 4px;
   padding: 12px;
+
+  margin-top: 4px;
+  margin-bottom: 4px;
+
+  cursor: pointer;
 `;
 
 export const BookListImageStack = styled(Stack)`
