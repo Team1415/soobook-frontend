@@ -19,8 +19,8 @@ const HomePage = () => {
     () => BookService.getNewBooks(1), // TODO : category id로 변경
   );
   const { data: hashtagData, isLoading: isHashtagLoading } = useQuery<Hashtag[]>(
-    ['hashtags'],
-    HashtagService.getHashtags,
+    ['hashtags', 'popular'],
+    () => HashtagService.getPopularHashtags(1), // TODO : category id로 변경
   );
 
   const { t } = useTranslation();
@@ -35,7 +35,7 @@ const HomePage = () => {
         <Banner />
 
         <HashtagAutocomplete type='home' />
-        <PopularHashtags hashtags={hashtagData?.slice(0, 3)} />
+        <PopularHashtags hashtags={hashtagData} />
 
         <Title
           leftLabel={t('home-page.title.new')}

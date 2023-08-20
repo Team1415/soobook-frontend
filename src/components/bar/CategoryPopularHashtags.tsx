@@ -1,3 +1,4 @@
+import { slice } from 'lodash-es';
 import { useTranslation } from 'react-i18next';
 
 import HashtagBadge from '@components/badge/HashtagBadge';
@@ -9,6 +10,8 @@ import {
 } from '@components/bar/CategoryPopularHashtags.style';
 import { Hashtag } from '@models/hashtag';
 import { useHashtagSearchConditionStore } from '@stores/useHashtagSearchConditionStore';
+
+const MAX_HASHTAG_COUNT = 10;
 
 interface CategoryPopularHashtagsProps {
   category: string;
@@ -28,7 +31,7 @@ const CategoryPopularHashtags = (props: CategoryPopularHashtagsProps) => {
           {t('search-page.label.category-popular-hashtag', { name: category })}
         </CategoryTypography>
         <HashtagBadgeBox>
-          {hashtags.map((hashtag, index) => (
+          {slice(hashtags, 0, MAX_HASHTAG_COUNT).map((hashtag, index) => (
             <HashtagBadge
               key={`${hashtag.name}_${index}`}
               type='outlined'
