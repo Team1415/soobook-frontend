@@ -11,7 +11,15 @@ import { HashtagService } from '@services/HashtagService';
 import { useHashtagSearchConditionStore } from '@stores/useHashtagSearchConditionStore';
 
 const SearchPage = () => {
-  const { data: hashtagData } = useQuery<Hashtag[]>(['hashtags'], HashtagService.getHashtags);
+  const { data: popularHashtagData } = useQuery<Hashtag[]>(
+    ['hashtags', 'popular'],
+    () => HashtagService.getPopularHashtags(1), // TODO : category id로 변경
+  );
+
+  const { data: hashtagData } = useQuery<Hashtag[]>(
+    ['hashtags'],
+    () => HashtagService.getHashtags(1), // TODO : category id로 변경
+  );
 
   const { animate, componentHeight } = useHeightAnimation();
   const { hashtagSearchConditions } = useHashtagSearchConditionStore();
@@ -21,7 +29,7 @@ const SearchPage = () => {
       <HashtagAutocomplete type='search' hashtags={hashtagData} />
       {!isEmpty(hashtagSearchConditions) && <SearchResultHeader total={0} />}
       {isEmpty(hashtagSearchConditions) && (
-        <CategoryPopularHashtags category='컴퓨터' hashtags={hashtagData ?? []} />
+        <CategoryPopularHashtags category='컴퓨터' hashtags={popularHashtagData ?? []} />
       )}
     </SearchPageAnimationContainer>
   );

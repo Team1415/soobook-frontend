@@ -19,8 +19,8 @@ const HomePage = () => {
     () => BookService.getNewBooks(1), // TODO : category id로 변경
   );
   const { data: hashtagData, isLoading: isHashtagLoading } = useQuery<Hashtag[]>(
-    ['hashtags'],
-    HashtagService.getHashtags,
+    ['hashtags', 'popular'],
+    () => HashtagService.getPopularHashtags(1), // TODO : category id로 변경
   );
 
   const { t } = useTranslation();
