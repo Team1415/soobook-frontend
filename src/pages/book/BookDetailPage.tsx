@@ -24,7 +24,7 @@ const BookDetailPage = () => {
       <>
         <BookDetailHeader />
 
-        <BookImageWithBlurredBackground imageUrl={data.thumbnail} />
+        <BookImageWithBlurredBackground imageUrl={data.thumbnailUrl} />
 
         <BookDetailTitle title={data.title} hashtags={data.hashtags} />
         <GrayDivider />

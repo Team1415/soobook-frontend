@@ -12,7 +12,7 @@ export interface Book {
   salePrice: number;
   status: string;
   publishDate: Date;
-  thumbnail: string;
+  thumbnailUrl: string;
   hashtags: Hashtag[];
 }
 
@@ -20,7 +20,7 @@ export interface BookCardModel {
   id: number;
   title: string;
   hashtags: Hashtag[];
-  thumbnail: string;
+  thumbnailUrl: string;
 }
 
 export interface BookDetail {
@@ -37,7 +37,7 @@ export interface BookDetail {
   salePrice: number;
   status: string;
   publishDate: Date;
-  thumbnail: string;
+  thumbnailUrl: string;
   hashtags: Hashtag[];
   index: string;
 }

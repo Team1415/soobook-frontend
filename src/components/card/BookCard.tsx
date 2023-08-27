@@ -16,7 +16,7 @@ import { BookCardModel } from '@models/book';
 type BookCardProps = BookCardModel;
 
 const BookCard = (props: BookCardProps) => {
-  const { thumbnail, title, hashtags, id } = props;
+  const { thumbnailUrl, title, hashtags, id } = props;
 
   const navigate = useNavigate();
 
@@ -24,7 +24,7 @@ const BookCard = (props: BookCardProps) => {
     <BookCardStack onClick={() => navigate(`/book/${id}`)}>
       <Space y={12} />
       <ImageStack>
-        <StyledImage src={thumbnail} alt={title} />
+        <StyledImage src={thumbnailUrl} alt={title} />
       </ImageStack>
       <Space y={12} />
       <TitleStack>

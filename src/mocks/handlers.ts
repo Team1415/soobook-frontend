@@ -37,7 +37,7 @@ export const handlers = [
               salePrice: 45490,
               status: '정상판매',
               publishDate: new Date('2019-08-05T15:00:00'),
-              thumbnail:
+              thumbnailUrl:
                 'https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F5069969%3Ftimestamp%3D20230307160031',
               hashtags: [
                 { id: 1, name: 'BackEnd' },
@@ -55,7 +55,7 @@ export const handlers = [
               salePrice: 45490,
               status: '정상판매',
               publishDate: new Date('2019-08-05T15:00:00'),
-              thumbnail:
+              thumbnailUrl:
                 'https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F5069969%3Ftimestamp%3D20230307160031',
               hashtags: [
                 { id: 1, name: 'BackEnd' },
@@ -73,7 +73,7 @@ export const handlers = [
               salePrice: 45490,
               status: '정상판매',
               publishDate: new Date('2019-08-05T15:00:00'),
-              thumbnail:
+              thumbnailUrl:
                 'https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F5069969%3Ftimestamp%3D20230307160031',
               hashtags: [
                 { id: 1, name: 'BackEnd' },
@@ -91,7 +91,7 @@ export const handlers = [
               salePrice: 45490,
               status: '정상판매',
               publishDate: new Date('2019-08-05T15:00:00'),
-              thumbnail:
+              thumbnailUrl:
                 'https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F5069969%3Ftimestamp%3D20230307160031',
               hashtags: [
                 { id: 1, name: 'BackEnd' },
@@ -109,7 +109,7 @@ export const handlers = [
               salePrice: 45490,
               status: '정상판매',
               publishDate: new Date('2019-08-05T15:00:00'),
-              thumbnail:
+              thumbnailUrl:
                 'https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F5069969%3Ftimestamp%3D20230307160031',
               hashtags: [
                 { id: 1, name: 'BackEnd' },
@@ -147,7 +147,7 @@ export const handlers = [
             salePrice: 45490,
             status: '정상판매',
             publishDate: new Date('2019-08-05T15:00:00'),
-            thumbnail:
+            thumbnailUrl:
               'https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F5069969%3Ftimestamp%3D20230307160031',
             hashtags: [
               { id: 1, name: 'BackEnd' },
