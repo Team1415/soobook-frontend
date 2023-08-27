@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { isEmpty, map } from 'lodash-es';
+import { isEmpty, map, slice } from 'lodash-es';
 
 import HashtagAutocomplete from '@components/autocomplete/HashtagAutocomplete';
 import CategoryPopularHashtags from '@components/bar/CategoryPopularHashtags';
@@ -33,7 +33,7 @@ const SearchPage = () => {
   const { data: bookData, isLoading } = useQuery<Book[]>(
     ['books', hashtagIds, sort],
     () => BookService.getBooks(1, sort, hashtagIds), // TODO : category id로 변경
-    { enabled: !isEmpty(hashtagIds), cacheTime: 1000 },
+    { cacheTime: 1000 },
   );
 
   return (
@@ -45,10 +45,10 @@ const SearchPage = () => {
           <CategoryPopularHashtags category='컴퓨터' hashtags={popularHashtagData ?? []} />
         )}
 
-        {!isEmpty(hashtagSearchConditions) && isLoading ? (
+        {isLoading ? (
           <CustomCircularProgress />
         ) : (
-          <BookListCards books={bookData ?? []} />
+          <BookListCards books={(isEmpty(hashtagIds) ? slice(bookData, 0, 10) : bookData) ?? []} />
         )}
       </SearchPageContainer>
     </SearchPageAnimationContainer>
