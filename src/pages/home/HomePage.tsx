@@ -1,4 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
+import { slice } from 'lodash-es';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
@@ -11,12 +12,17 @@ import BookCarousel from '@components/carousel/BookCarousel';
 import UserHeader from '@components/header/UserHeader';
 import { BookSort } from '@constants/sort';
 import { Book } from '@models/book';
+import { Category } from '@models/category';
 import { Hashtag } from '@models/hashtag';
 import { BookService } from '@services/BookService';
+import { CategoryService } from '@services/CategoryService';
 import { HashtagService } from '@services/HashtagService';
 import { useHashtagSearchConditionStore } from '@stores/useHashtagSearchConditionStore';
 
 const HomePage = () => {
+  const { data: categories, isLoading: isCategoriesLoading } = useQuery<Category[]>(['categories'], () =>
+    CategoryService.getCategories(),
+  );
   const { data: newBooks, isLoading: isNewBookLoading } = useQuery<Book[]>(
     ['books', 'new'],
     () => BookService.getNewBooks(1), // TODO : category id로 변경
@@ -31,7 +37,7 @@ const HomePage = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
-  if (isNewBookLoading || isHashtagLoading) {
+  if (isNewBookLoading || isHashtagLoading || isCategoriesLoading) {
     return <></>;
   } else {
     return (
@@ -51,10 +57,10 @@ const HomePage = () => {
             setSort(BookSort.NEW);
           }}
         />
-        <BookCarousel books={newBooks || []} />
+        <BookCarousel books={slice(newBooks, 0, 10) || []} />
 
         <CategoryTitle category='컴퓨터' />
-        <BookCarousel books={newBooks || []} />
+        <BookCarousel books={slice(newBooks, 0, 10) || []} />
       </>
     );
   }

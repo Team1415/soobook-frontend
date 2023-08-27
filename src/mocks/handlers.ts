@@ -182,26 +182,32 @@ export const handlers = [
             {
               id: 1,
               name: '컴퓨터',
+              useYn: 'Y',
             },
             {
               id: 2,
               name: '언어',
+              useYn: 'N',
             },
             {
               id: 3,
-              name: '드잉',
+              name: '드로잉',
+              useYn: 'N',
             },
             {
               id: 4,
               name: '요리',
+              useYn: 'N',
             },
             {
               id: 5,
               name: '원예',
+              useYn: 'N',
             },
             {
               id: 6,
               name: '여행',
+              useYn: 'N',
             },
           ],
         },
