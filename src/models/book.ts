@@ -1,17 +1,17 @@
 import { Hashtag } from '@models/hashtag';
 
-import { Index } from '.';
-
 export interface Book {
   id: number;
   isbn10: number;
   isbn13: number;
   title: string;
+  authors: string[];
+  translators?: string[];
   publisher: string;
   price: number;
   salePrice: number;
   status: string;
-  publishDatetime: Date;
+  publishDate: Date;
   thumbnail: string;
   hashtags: Hashtag[];
 }
@@ -28,17 +28,18 @@ export interface BookDetail {
   isbn10: number;
   isbn13: number;
   title: string;
-  author: string;
+  authors: string[];
+  translators?: string[];
   publisher: string;
   description: string;
   page: number;
   price: number;
   salePrice: number;
   status: string;
-  publishDatetime: Date;
+  publishDate: Date;
   thumbnail: string;
   hashtags: Hashtag[];
-  indexs: Index[];
+  index: string;
 }
 
 export interface BookListCardModel extends BookCardModel {

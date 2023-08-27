@@ -50,9 +50,10 @@
     },
     "label": {
       "author": "저자",
+      "translator": "번역가",
       "publisher": "출판사",
       "page": "페이지",
-      "publicationDate": "출간일",
+      "publishDate": "출간일",
       "isbn": "ISBN",
       "price": "정가"
     },

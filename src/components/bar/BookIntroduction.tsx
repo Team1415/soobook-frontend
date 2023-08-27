@@ -8,17 +8,18 @@ import {
 import Space from '@components/layout/Space';
 
 interface BookIntroductionProps {
+  type: 'introduction' | 'index';
   content: string;
 }
 
 const BookIntroduction = (props: BookIntroductionProps) => {
-  const { content } = props;
+  const { type, content } = props;
 
   const { t } = useTranslation();
 
   return (
     <BookIntroductionBox>
-      <TitleTypography>{t('detail-page.title.introduction')}</TitleTypography>
+      <TitleTypography>{t(`detail-page.title.${type}`)}</TitleTypography>
       <Space y={10} />
       <ContentTypography>{content}</ContentTypography>
     </BookIntroductionBox>

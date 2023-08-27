@@ -3,7 +3,6 @@ import { isEmpty } from 'lodash-es';
 import { useParams } from 'react-router-dom';
 
 import BookDetailTitle from '@components/bar/BookDetailTitle';
-import BookIndex from '@components/bar/BookIndex';
 import BookInformation from '@components/bar/BookInformation';
 import BookIntroduction from '@components/bar/BookIntroduction';
 import GrayDivider from '@components/divider/GrayDivider';
@@ -31,19 +30,20 @@ const BookDetailPage = () => {
         <GrayDivider />
 
         <BookInformation
-          author={data.author}
+          authors={data.authors}
+          translators={data.translators}
           publisher={data.publisher}
           page={data.page}
-          publicationDate={DateUtil.toString(data.publishDatetime)}
+          publishDate={DateUtil.toString(data.publishDate)}
           isbn={data.isbn10}
           price={data.price}
         />
         <GrayDivider />
 
-        <BookIntroduction content={data.description} />
+        <BookIntroduction type='introduction' content={data.description} />
         <GrayDivider />
 
-        <BookIndex indexs={data.indexs} />
+        <BookIntroduction type='index' content={data.index} />
       </>
     );
   }
