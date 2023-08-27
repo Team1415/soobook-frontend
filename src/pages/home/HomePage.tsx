@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 import HashtagAutocomplete from '@components/autocomplete/HashtagAutocomplete';
 import Banner from '@components/bar/Banner';
@@ -8,10 +9,12 @@ import PopularHashtags from '@components/bar/PopularHashtags';
 import Title from '@components/bar/Title';
 import BookCarousel from '@components/carousel/BookCarousel';
 import UserHeader from '@components/header/UserHeader';
+import { BookSort } from '@constants/sort';
 import { Book } from '@models/book';
 import { Hashtag } from '@models/hashtag';
 import { BookService } from '@services/BookService';
 import { HashtagService } from '@services/HashtagService';
+import { useHashtagSearchConditionStore } from '@stores/useHashtagSearchConditionStore';
 
 const HomePage = () => {
   const { data: newBooks, isLoading: isNewBookLoading } = useQuery<Book[]>(
@@ -23,6 +26,9 @@ const HomePage = () => {
     () => HashtagService.getPopularHashtags(1), // TODO : category id로 변경
   );
 
+  const { setSort } = useHashtagSearchConditionStore();
+
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
   if (isNewBookLoading || isHashtagLoading) {
@@ -40,7 +46,10 @@ const HomePage = () => {
         <Title
           leftLabel={t('home-page.title.new')}
           rightLabel={t('home-page.label.more')}
-          onClickRightLabel={() => alert('todo')}
+          onClickRightLabel={() => {
+            navigate('/search');
+            setSort(BookSort.NEW);
+          }}
         />
         <BookCarousel books={newBooks || []} />
 
