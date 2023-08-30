@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick.css';
 
 import BookCard from '@components/card/BookCard';
 import { CarouselBox } from '@components/carousel/BookCarousel.style';
+import useSlide from '@hooks/useSlide';
 import { BookCardModel } from '@models/book';
 
 interface BookCarouselProps {
@@ -13,6 +14,8 @@ interface BookCarouselProps {
 
 const BookCarousel = (props: BookCarouselProps) => {
   const { books } = props;
+
+  const { dragging, handleBeforeChange, handleAfterChange } = useSlide();
 
   return (
     <CarouselBox>
@@ -24,10 +27,12 @@ const BookCarousel = (props: BookCarouselProps) => {
         swipeToSlide={true}
         variableWidth={true}
         arrows={false}
+        beforeChange={handleBeforeChange}
+        afterChange={handleAfterChange}
       >
         {books.map((book, index) => (
           <div key={`${book.title}_${index}`}>
-            <BookCard {...book} />
+            <BookCard {...book} preventOnClick={dragging} />
           </div>
         ))}
       </Slider>
