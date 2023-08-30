@@ -55,7 +55,8 @@
       "page": "페이지",
       "publishDate": "출간일",
       "isbn": "ISBN",
-      "price": "정가"
+      "price": "정가",
+      "related": "이런 책도 있어요"
     },
     "message": {}
   },
