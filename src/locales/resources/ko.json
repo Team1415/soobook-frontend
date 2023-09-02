@@ -11,7 +11,8 @@
       "introduction": "수북에서 수북하게",
       "hello": "안녕하세요 ",
       "sir": "님",
-      "introduce": "수북의 서비스를 둘러보세요"
+      "introduce": "수북의 서비스를 둘러보세요",
+      "coming-soon": "준비중입니다."
     }
   },
   "home-page": {
@@ -50,11 +51,13 @@
     },
     "label": {
       "author": "저자",
+      "translator": "번역가",
       "publisher": "출판사",
       "page": "페이지",
-      "publicationDate": "출간일",
+      "publishDate": "출간일",
       "isbn": "ISBN",
-      "price": "정가"
+      "price": "정가",
+      "related": "이런 책도 있어요"
     },
     "message": {}
   },

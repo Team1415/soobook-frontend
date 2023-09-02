@@ -18,7 +18,7 @@ const BookListCards = (props: BookListCardsProps) => {
           title={book.title}
           publisher={book.publisher}
           hashtags={book.hashtags}
-          thumbnail={book.thumbnail}
+          thumbnailUrl={book.thumbnailUrl}
         />
       ))}
     </BookListCardsBox>

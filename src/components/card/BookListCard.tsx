@@ -16,14 +16,14 @@ import { BookListCardModel } from '@models/book';
 type BookListCardProps = BookListCardModel;
 
 const BookListCard = (props: BookListCardProps) => {
-  const { publisher, thumbnail, title, hashtags, id } = props;
+  const { publisher, thumbnailUrl, title, hashtags, id } = props;
 
   const navigate = useNavigate();
 
   return (
     <StyledBookListCardStack onClick={() => navigate(`/book/${id}`)}>
       <BookListImageStack>
-        <BookListImage src={thumbnail} alt={title} />
+        <BookListImage src={thumbnailUrl} alt={title} />
       </BookListImageStack>
       <BookListBodyStack>
         <Space y={3} />

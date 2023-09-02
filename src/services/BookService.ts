@@ -1,4 +1,4 @@
-import { isEmpty, join } from 'lodash-es';
+import { join } from 'lodash-es';
 
 import axiosInstance from '@/config/Axios';
 import { ApiPath } from '@constants/api';
@@ -14,10 +14,6 @@ export namespace BookService {
   };
 
   export const getBooks = async (categoryId: number, type: 'new' | 'popular', hashtagIds: number[]) => {
-    if (isEmpty(hashtagIds)) {
-      return new Promise<Book[]>(() => []);
-    }
-
     return (
       await axiosInstance.get<Book[]>(ApiPath.BOOK.GET_BOOKS, {
         params: { type, category: categoryId, hashtags: join(hashtagIds, ',') },

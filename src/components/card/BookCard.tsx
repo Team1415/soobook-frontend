@@ -1,6 +1,8 @@
+import { useCallback } from 'react';
+
 import { Typography } from '@mui/material';
 import { get } from 'lodash-es';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import HashtagBadge from '@components/badge/HashtagBadge';
 import {
@@ -13,18 +15,37 @@ import {
 import Space from '@components/layout/Space';
 import { BookCardModel } from '@models/book';
 
-type BookCardProps = BookCardModel;
+interface BookCardProps extends BookCardModel {
+  preventOnClick: boolean;
+}
 
 const BookCard = (props: BookCardProps) => {
-  const { thumbnail, title, hashtags, id } = props;
+  const { thumbnailUrl, title, hashtags, id, preventOnClick } = props;
+
+  const location = useLocation();
+
+  console.log('location', location.pathname);
 
   const navigate = useNavigate();
 
+  const onClickCard = useCallback(
+    (e: React.MouseEvent<HTMLElement>) => {
+      if (preventOnClick) {
+        e.stopPropagation();
+        return;
+      }
+
+      const newUrl = `/book/${id}`;
+      navigate(newUrl, { replace: location.pathname === newUrl });
+    },
+    [id, preventOnClick],
+  );
+
   return (
-    <BookCardStack onClick={() => navigate(`/book/${id}`)}>
+    <BookCardStack onClick={onClickCard}>
       <Space y={12} />
       <ImageStack>
-        <StyledImage src={thumbnail} alt={title} />
+        <StyledImage src={thumbnailUrl} alt={title} />
       </ImageStack>
       <Space y={12} />
       <TitleStack>

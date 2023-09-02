@@ -1,14 +1,14 @@
 export namespace ApiPath {
   export const BOOK = {
-    GET_BOOKS: '/books',
-    GET_BOOK: '/books/',
+    GET_BOOKS: '/api/books',
+    GET_BOOK: '/api/books/',
   };
 
   export const HASHTAG = {
-    GET_HASHTAGS: '/hashtags',
+    GET_HASHTAGS: '/api/hashtags',
   };
 
   export const CATEGORY = {
-    GET_CATEGORIES: '/categories',
+    GET_CATEGORIES: '/api/categories',
   };
 }

@@ -5,7 +5,7 @@ import { StyledCategoryButton } from '@components/button/CategoryButton.style';
 interface Props {
   title: string;
   icon: ReactNode;
-  onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   active?: boolean;
 }
 
