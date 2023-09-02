@@ -5,6 +5,7 @@ import HashtagAutocomplete from '@components/autocomplete/HashtagAutocomplete';
 import CategoryPopularHashtags from '@components/bar/CategoryPopularHashtags';
 import CustomCircularProgress from '@components/bar/CustomCircularProgress';
 import BookListCards from '@components/card/BookListCards';
+import CategoryCarousel from '@components/carousel/CategoryCarousel';
 import SearchResultHeader from '@components/header/SearchResultHeader';
 import useHeightAnimation from '@hooks/useHeightAnimation';
 import { Book } from '@models/book';
@@ -16,29 +17,29 @@ import { useHashtagSearchConditionStore } from '@stores/useHashtagSearchConditio
 
 const SearchPage = () => {
   const { animate, componentHeight } = useHeightAnimation();
-  const { hashtagSearchConditions, sort } = useHashtagSearchConditionStore();
+  const { hashtagSearchConditions, sort, categoryIndex } = useHashtagSearchConditionStore();
 
   const hashtagIds = map(hashtagSearchConditions, 'id');
 
-  const { data: popularHashtagData } = useQuery<Hashtag[]>(
-    ['hashtags', 'popular'],
-    () => HashtagService.getPopularHashtags(1), // TODO : category id로 변경
+  const { data: popularHashtagData } = useQuery<Hashtag[]>(['hashtags', 'popular'], () =>
+    HashtagService.getPopularHashtags(categoryIndex),
   );
 
-  const { data: hashtagData } = useQuery<Hashtag[]>(
-    ['hashtags'],
-    () => HashtagService.getHashtags(1), // TODO : category id로 변경
+  const { data: hashtagData } = useQuery<Hashtag[]>(['hashtags'], () =>
+    HashtagService.getHashtags(categoryIndex),
   );
 
   const { data: bookData, isLoading } = useQuery<Book[]>(
     ['books', hashtagIds, sort],
-    () => BookService.getBooks(1, sort, hashtagIds), // TODO : category id로 변경
+    () => BookService.getBooks(categoryIndex, sort, hashtagIds),
     { cacheTime: 1000 },
   );
 
   return (
     <SearchPageAnimationContainer animate={animate} height={componentHeight || 0}>
+      <CategoryCarousel />
       <HashtagAutocomplete type='search' hashtags={hashtagData} />
+
       <SearchPageContainer>
         {!isEmpty(hashtagSearchConditions) && <SearchResultHeader total={bookData?.length ?? 0} />}
         {isEmpty(hashtagSearchConditions) && (

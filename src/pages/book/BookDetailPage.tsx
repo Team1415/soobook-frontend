@@ -14,9 +14,11 @@ import BookImageWithBlurredBackground from '@components/image/BookImageWithBlurr
 import { BookSort } from '@constants/sort';
 import { Book, BookDetail } from '@models/book';
 import { BookService } from '@services/BookService';
+import { useHashtagSearchConditionStore } from '@stores/useHashtagSearchConditionStore';
 import { DateUtil } from '@utils/DateUtil';
 
 const BookDetailPage = () => {
+  const { categoryIndex } = useHashtagSearchConditionStore();
   const { t } = useTranslation();
   const { id } = useParams();
 
@@ -26,9 +28,9 @@ const BookDetailPage = () => {
 
   const hashtagIds = map(bookDetail?.hashtags, 'id');
 
-  const { data: relatedBooks, isLoading: isRelatedBooksLoading } = useQuery<Book[]>(
+  const { data: relatedBooks } = useQuery<Book[]>(
     ['books', hashtagIds, BookSort.POPULAR],
-    () => BookService.getBooks(1, BookSort.POPULAR, hashtagIds), // TODO : category id로 변경
+    () => BookService.getBooks(categoryIndex, BookSort.POPULAR, hashtagIds), // TODO : category id로 변경
     { enabled: !isBookDetailLoading, cacheTime: 1000 },
   );
 

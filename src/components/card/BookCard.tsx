@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { Typography } from '@mui/material';
 import { get } from 'lodash-es';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import HashtagBadge from '@components/badge/HashtagBadge';
 import {
@@ -22,6 +22,10 @@ interface BookCardProps extends BookCardModel {
 const BookCard = (props: BookCardProps) => {
   const { thumbnailUrl, title, hashtags, id, preventOnClick } = props;
 
+  const location = useLocation();
+
+  console.log('location', location.pathname);
+
   const navigate = useNavigate();
 
   const onClickCard = useCallback(
@@ -31,7 +35,8 @@ const BookCard = (props: BookCardProps) => {
         return;
       }
 
-      navigate(`/book/${id}`);
+      const newUrl = `/book/${id}`;
+      navigate(newUrl, { replace: location.pathname === newUrl });
     },
     [id, preventOnClick],
   );

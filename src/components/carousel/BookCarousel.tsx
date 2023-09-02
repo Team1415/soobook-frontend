@@ -24,9 +24,9 @@ const BookCarousel = (props: BookCarouselProps) => {
         infinite={false}
         slidesToShow={1}
         slidesToScroll={1}
-        swipeToSlide={true}
         variableWidth={true}
         arrows={false}
+        touchThreshold={100}
         beforeChange={handleBeforeChange}
         afterChange={handleAfterChange}
       >

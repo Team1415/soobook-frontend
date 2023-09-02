@@ -8,9 +8,11 @@ interface HashtagSearchConditionState {
   limitCountOfHashtag: number;
   disableHashtagAutocomplete: boolean;
   sort: BookSort;
+  categoryIndex: number;
   setHashtagSearchConditions: (param: Hashtag[]) => void;
   initializeHashtagSearchConditions: () => void;
   setSort: (param: BookSort) => void;
+  setCategoryIndex: (param: number) => void;
 }
 
 export const useHashtagSearchConditionStore = create<HashtagSearchConditionState>((set) => ({
@@ -18,6 +20,7 @@ export const useHashtagSearchConditionStore = create<HashtagSearchConditionState
   limitCountOfHashtag: 5,
   disableHashtagAutocomplete: false,
   sort: BookSort.POPULAR,
+  categoryIndex: 1,
   setHashtagSearchConditions: (param: Hashtag[]) =>
     set((state: HashtagSearchConditionState) => ({
       hashtagSearchConditions: [...param],
@@ -29,4 +32,5 @@ export const useHashtagSearchConditionStore = create<HashtagSearchConditionState
       disableHashtagAutocomplete: false,
     })),
   setSort: (param: BookSort) => set(() => ({ sort: param })),
+  setCategoryIndex: (param: number) => set(() => ({ categoryIndex: param })),
 }));
